@@ -124,6 +124,8 @@ You are now ready to upload some sample logs to Log Analytics and explore its fu
 
 <details><summary><b>Uploading Sample Logs to Log Analytics</b></summary>
 
+<h2 style="display:none;">hi</h2>
+
 To upload the provided sample logs, follow these steps:
 
 1. Before uploading logs, enter property values to be used in uploading log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
