@@ -5,16 +5,14 @@
 [global-context]: ./Tutorial_Images/global_context.png
 
 
-# <center>Analyzing Logs Using Oracle Log Analytics</center>
+<h1> Analyzing Logs Using Oracle Log Analytics </h1>
 
-**<center>OMC Log Analytics</center>**
+**OMC Log Analytics**
 
-<center>An application that allows you to condense logs to find issues faster.</center>
+An application that allows you to condense logs to find issues faster.
 
 ## Table of Contents
 
-- [<center>Analyzing Logs Using Oracle Log Analytics</center>](#centeranalyzing-logs-using-oracle-log-analyticscenter)
-  - [Table of Contents](#table-of-contents)
   - [Before You Begin](#before-you-begin)
       - [Background](#background)
       - [What Do You Need?](#what-do-you-need)
@@ -41,7 +39,7 @@ Oracle Log Analytics monitors, aggregates, indexes, and analyzes all log data fr
 
 #### What Do You Need?
 
-- An Oracle Cloud account: if you do not already have one, sign up for a free trail [here](https://cloud.oracle.com/home). For more information, see [How Do I Access Oracle Management Cloud?](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-838A6676-0224-4CF1-8BC8-8327887D24B7)
+- An Oracle Cloud account: if you do not already have one, sign up for a free triall [here](https://cloud.oracle.com/home). For more information, see [How Do I Access Oracle Management Cloud?](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-838A6676-0224-4CF1-8BC8-8327887D24B7)
 - An Oracle Management Cloud instance: If you don't already have an Oracle Management Cloud instance, create one. For more information, see [Creating an Oracle Management Cloud Instance](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-C15E9F94-78CD-4868-A9F8-DCF50D267A2E).
 - Appropriate license: Configure your license edition Oracle Management Cloud – Log Analytics Edition. For more information, see [How Do I License Oracle Management Cloud?](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/oracle-management-cloud-license-information.html#GUID-A2F5635B-D7DE-4277-B707-035A96F19B26)
 - A Unix host with connectivity to your Oracle Management Cloud instance and with a version of cURL that supports TLS 1.2 protocol.
@@ -55,11 +53,11 @@ To meet the pre-requisites, you must have signed up for an Oracle Cloud account 
 
 Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle Management Cloud instance tile should be displayed on the My Services dashboard.
 
-1. On your Management Cloud tile, click the **Action Menu** ![alt text][hamburger] then click **Open Service Console**. You are now viewing the Oracle Management Cloud instances page.
+1. On your Management Cloud tile, click the **Action Menu** ![hamburger] then click **Open Service Console**. You are now viewing the Oracle Management Cloud instances page.
 2. On the instance you want to access, click the **Manage this instance** menu and select **OMC URL**. The Oracle Management Cloud console home page is displayed.
 3. Navigate to **Administration** > **Agents** > **Download** and select the Gateway Agent agent type from drop-down list. Make a note of your `TENANT_NAME` and `OMC_URL` values for your environment.
 
-![alt text][agent-download]
+![agent-download]
 
 #### Check for TLS 1.2 Support
 
@@ -71,6 +69,7 @@ $ <b>curl --help | grep -i tlsv1.2</b>
 </pre>
 
 Note the output of this command confirms that the version of the TLS protocol is TLSv1.2 (SSL).
+If your compute does not support TLSv1.2 you may need to update `yum`.
 
 #### Verify your host connectivity to Oracle Management Cloud
 
@@ -78,7 +77,7 @@ Your Unix host must have HTTPS access to Oracle Management Cloud. To check this,
 
 1. If you are using a proxy server, set a pointer to it. If you are not using a proxy server, skip this step.
    <pre>
-   $ <b>export HTTPS_PROXY=www-proxy.example.com:80</b>
+    $ <b>export HTTPS_PROXY=www-proxy.example.com:80</b>
    </pre>
 2. The `OMC_URL` parameter value you noted for your environment represents the URL where the sample logs will be uploaded. Check the connectivity to your specific URL. The format of the command and sample output is shown below:
 
@@ -96,17 +95,17 @@ Your Unix host must have HTTPS access to Oracle Management Cloud. To check this,
    Cache-Control: no-cache,no-store
    </pre>
 
-The command output indicates that the connection was established.
+    The command output indicates that the connection was established.
 
 ## 2. Prepare to Upload Log Data
 
 1. Download the sample data zip file [here](https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:23996).
 2. On your host, make a directory called `SCRIPT_HOME` and save the `DBLogTrial.zip` file to it. Move into the `SCRIPT_HOME`diretory and unzip the file.
 
-<pre>
-$ <b>cd SCRIPT_HOME</b>
-$ <b>unzip DBLogTrial.zip</b>
-</pre>
+    <pre>
+    $ <b>cd SCRIPT_HOME</b>
+    $ <b>unzip DBLogTrial.zip</b>
+    </pre>
 
 Some of the files part of this set are:
 
@@ -122,9 +121,8 @@ The next steps will guide you through these files.
 
 You are now ready to upload some sample logs to Log Analytics and explore its functionality.
 
-<details><summary><b>Uploading Sample Logs to Log Analytics</b></summary>
-
-<h2 style="display:none;">hi</h2>
+<details>
+<summary><b>Uploading Sample Logs to Log Analytics</b></summary>
 
 To upload the provided sample logs, follow these steps:
 
@@ -145,14 +143,12 @@ To upload the provided sample logs, follow these steps:
     # UPLOAD_ROOT=https://inst2-xyz.itom.management.europe.oraclecloud.com
     # UPLOAD_ROOT=https://a123456.itom.management.us2.oraclecloud.com
     # This is a required parameter. The "https://" part is optional.
-    UPLOAD_ROOT=
-
+    UPLOAD_ROOT= <br/>
     # Subscription Identity Domain
     # EX:
     # IDENTITY_DOMAIN=acme
     # This is a required parameter
-    IDENTITY_DOMAIN=
-
+    IDENTITY_DOMAIN= <br/>
     # OMC user name
     # EX:
     # USERNAME=john.doe@xyz.com
@@ -178,11 +174,10 @@ To upload the provided sample logs, follow these steps:
 Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.
 
 Ex:
-
-   <pre>
-   Upload name: alertlog.2018-01-07_19:43:25
-   Upload name: syslog.2018-01-07_19:43:32
-   </pre>
+<pre>
+Upload name: alertlog.2018-01-07_19:43:25
+Upload name: syslog.2018-01-07_19:43:32
+</pre>
 
 #### Verifying the Status of the Uploads
 
@@ -198,6 +193,7 @@ To verify the status of the uploads, follow these steps:
        1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will seen a green stick in the **Status** field.
 
 </details>
+
 <details>
 <summary><b>Viewing Uploaded Log Records</b></summary>
 To view the records from an upload, follow these steps:
