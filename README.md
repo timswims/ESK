@@ -266,7 +266,7 @@ You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some 
 </details>
 
 ## 4. Upload Your Own Logs and Evaluate
-
+test
 ## 5. Install a Gateway Agent
 
 The Oracle Management Cloud (OMC) Gateway is an optional yet vital component of an Oracle Management Cloud deployment. It serves as a channel between Oracle Management Cloud agents and Oracle Management Cloud. While it is possible for the OMC agent that resides on each host to communicate directly with OMC’s backend, for security reasons, an organization may want to limit the number of hosts that can connect to the Internet directly. In this case, it is best to set up one or a small number of OMC Gateway hosts, and enable Internet access only for those hosts.
