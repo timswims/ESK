@@ -1,8 +1,17 @@
-[hamburger]: ./Tutorial_Images/hamburger.png
-[agent-download]: ./Tutorial_Images/agent_download.png
-[cluster-icon]: ./Tutorial_Images/cluster_icon.png
-[gear]: ./Tutorial_Images/gear.png
-[global-context]: ./Tutorial_Images/global_context.png
+[hamburger]: ./Tutorial_Images/general/hamburger.png
+[agent-download]: ./Tutorial_Images/general/agent_download.png
+[cluster-icon]: ./Tutorial_Images/general/cluster_icon.png
+[gear]: ./Tutorial_Images/general/gear.png
+[global-context]: ./Tutorial_Images/general/global_context.png
+
+[uploads-1]: ./Tutorial_Images/log_analytics/uploads_1.png
+[uploads-2]: ./Tutorial_Images/log_analytics/uploads_2.png
+[uploads-3]: ./Tutorial_Images/log_analytics/uploads_3.png
+[uploads-4]: ./Tutorial_Images/log_analytics/uploads_4.png
+[clustering]: ./Tutorial_Images/log_analytics/clustering.gif
+[drill-down]: ./Tutorial_Images/log_analytics/drill_down.gif
+
+
 
 
 <h1> Analyzing Logs Using Oracle Log Analytics </h1>
@@ -189,17 +198,22 @@ To verify the status of the uploads, follow these steps:
 3.  Navigate to the **Log Admin** page and view status of the uploads.
     1. From the left navigation pane, select **Log Admin**.
     2. Select **Uploads**.
-    3. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
+ 3. 
+    4. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
        1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will seen a green stick in the **Status** field.
-
+   
+   ![uploads-1] ![uploads-2] ![uploads-3]
 </details>
 
-<details>
+
+
+
 <summary><b>Viewing Uploaded Log Records</b></summary>
 To view the records from an upload, follow these steps:
 
 1. Navigate to the **Uploads** page.
 2. From the **Uploads** page, select an upload, click the menu icon ![alt text][hamburger] on the right and click **View in Log Explorer** to view the records from that upload.
+   ![uploads-4]
 3. From the log explorer page, you can view the alert log records from the upload that you selected.
 
 Some of the information shown on the page includes:
@@ -209,12 +223,15 @@ Some of the information shown on the page includes:
 - The histogram shows the daily volumes of log records. This helps identify any abnormality in record volumes at a glance. You can drill down by clicking a bar on the chart.
 - The first 25 of the 1920 records that came with the upload. The records are in date order from newest to oldest. You can reverse the order by clicking the arrowhead in the Time (`<time zone>`) field.
 - You can browse the rest of log records by using the pagination at the bottom of the page.
-</details>
 
-<details><summary><b>Detecting Anomalies with the Cluster Command</b></summary>
+
+
+<summary><b>Detecting Anomalies with the Cluster Command</b></summary>
 
 To detect anomalies based on log records, you can use Log Analytics cluster command, which automatically groups log records based on severity, such as error, fault, fatal and warning, and dynamically identified patterns, potential issues, outliers, and trends.
- - To perform clustering on the log records, from the **Visualize** panel click the currently selected visualization (e.g. **Records with Histogram**), and click **Cluster** ![alt text][cluster-icon] icon.
+ - To perform clustering on the log records, from the **Visualize** panel click the currently selected visualization (e.g. **Records with Histogram**), and click **Cluster** ![cluster-icon] icon.
+
+![clustering]
 
 #### Checking the Outcome of the Cluster Operation
 The cluster operation reduced 1920 log records to 123 clusters, identified 25 potential issues, 37 outliers, and 26 trends.
@@ -226,6 +243,8 @@ Examine the log clusters, and then click **Potential Issues**.
 From the **Potential Issues** tab, you can look at the log clusters that Log Analytics identifies as potential issues, if you see a cluster with a sample message that may be pointing to an issue of significance or of interest, click the value in the **Count** column to drill down see the records of the cluster.
 
 For example, the following sample message indicates that the Oracle database instance had problems writing to a control file due to a file I/O error. This kind of problem is critical; it tends to result in an abnormal shutdown of the instance.
+
+![drill-down]
 
 Let’s drill down to the log record by clicking the count value of 1 on the left of the sample message.
 
