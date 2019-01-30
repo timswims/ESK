@@ -10,6 +10,7 @@
 [uploads-4]: ./Tutorial_Images/log_analytics/uploads_4.png
 [clustering]: ./Tutorial_Images/log_analytics/clustering.gif
 [drill-down]: ./Tutorial_Images/log_analytics/drill_down.gif
+[correlating-logs]: ./Tutorial_Images/log_analytics/correlating_logs.gif
 
 
 
@@ -207,7 +208,7 @@ To verify the status of the uploads, follow these steps:
 
 
 
-
+<details>
 <summary><b>Viewing Uploaded Log Records</b></summary>
 To view the records from an upload, follow these steps:
 
@@ -223,9 +224,9 @@ Some of the information shown on the page includes:
 - The histogram shows the daily volumes of log records. This helps identify any abnormality in record volumes at a glance. You can drill down by clicking a bar on the chart.
 - The first 25 of the 1920 records that came with the upload. The records are in date order from newest to oldest. You can reverse the order by clicking the arrowhead in the Time (`<time zone>`) field.
 - You can browse the rest of log records by using the pagination at the bottom of the page.
+</details>
 
-
-
+<details>
 <summary><b>Detecting Anomalies with the Cluster Command</b></summary>
 
 To detect anomalies based on log records, you can use Log Analytics cluster command, which automatically groups log records based on severity, such as error, fault, fatal and warning, and dynamically identified patterns, potential issues, outliers, and trends.
@@ -254,10 +255,12 @@ Drilling down on a log cluster allows you to see the log record(s) including the
 
 Log Analytics allows you to quickly correlate logs from different sources (e.g. database logs and syslog) based on time to determine whether there is a correlation between events captured in log records. Let’s query the log records for entities demo_db_instance and demo_host 30 seconds before 5:23:28 PM (UTC-8:00) and 30 seconds after that by following these steps:
 
-1. Click ![gear] at the bottom of the **Original Log Content** field, and then select **Show Logs**, **Custom Range**.
-2. From the Show Logs Custom Range pop-up window, enter 30 (seconds) for **Time Range - Before**, 30 (seconds) for **Time Range – After**, and click **OK**.
+1. Click ![gear] at the bottom of the **Original Log Content** field, and then select **Advanced Log Fitler Options...**.
+2. From the Advanced Log Filter Options pop-up window, enter 30 (seconds) for **Time Range - Before**, 30 (seconds) for **Time Range – After**, and click **OK**.
 3. In the **Global Context** ![global-context] bar near the top, enter `demo_host` next to `demo_db_instance`, click in the Query bar to clear any existing filter, and click **Run**.
 4. The above query retrieves the log records uploaded for entities `demo_db_instance` and `demo_host` for the period of 5:23:28 PM to 5:24:28 PM on August 9. Examine the 31 records in the two-page output to see the sequence of the events that were captured in the logs in the one-minute period, and which of the events may have had an effect on other events.
+
+![correlating-logs]
 
 You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some I/O errors occurred on disk device sdd1 (see page 2), and database alert logs recorded that the database encountered I/O errors (see page 1); then at 5:24:00PM the database was terminated.
 </details>
