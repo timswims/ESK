@@ -266,7 +266,7 @@ You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some 
 </details>
 
 ## 4. Upload Your Own Logs and Evaluate
-Now that you have successfuly uploaded sample data you can now upload your own data. 
+Now that you have successfuly uploaded sample data you can now upload your own data inside of uploadMyLog. 
 
 <details>
 <summary><b>Deploying uploadMyLog</b></summary>
@@ -293,7 +293,7 @@ After extracting the Zip file as above, you will see a directory named DBLogTria
 
 </details>
 <details>
-<summary><b>Using upLoadMyLog</b></summary>
+<summary><b>Using uploadMyLog</b></summary>
 
 This section provides the steps for using the uploadMyLog package to upload sample logs to explore Log Analytics features.
 
