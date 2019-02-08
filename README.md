@@ -359,13 +359,12 @@ To verify the status of the uploads, follow these steps:
 
 ## 5. Install a Gateway Agent
 
+<details>
+<summary><b>Deploy Oracle Management Cloud Gateway</b></summary>
+
 #### Before You Begin
 
 ##### Background
-
-
-<details>
-Deploy Oracle Management Cloud Gateway
 
 Oracle Management Cloud (OMC) Gateway (highlighted in red in the diagram below) is an optional yet vital component of an Oracle Management Cloud deployment. It serves as a channel between Oracle Management Cloud agents and Oracle Management Cloud.
 
@@ -375,6 +374,7 @@ For a trial, since the number of hosts may be small, it is possible to do a tria
 --insert picture--
 
 There are 5 steps for deploying OMC Gateway.
+
 1. Download the Oracle Management Cloud Gateway Software
 2. Create Registration Key
 3. Edit the Response File
@@ -476,7 +476,6 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 
 --Insert Picture Here--
 
-
 ## Save and Extract the Gateway Files
 
 1. On the Oracle Management Cloud home page, click the Global Navigation Menu on the top-left corner and navigate to Administration > Agents.
@@ -490,45 +489,48 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for linux, use the following steps:
 	
 	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the below command (You will use your OCI Public IP Address instead of 129.***.***.**):
-		ssh opc@129.***.***.**
+		
+        `ssh opc@129.***.***.**`
 
 	*	From OPC Terminal Session type pwd to see where you are currently at in your directory.  You should see the following:
 
-		/home/opc
+         `/home/opc`
 
 	*	From OPC Terminal Session  Make a directory called agent.  Run the following command in your terminal:
-
-		mkdir agent
+		
+        `mkdir agent`
 
 	*	From OPC Terminal Session Make a directory called omc.  Run the following command in your terminal:
-
-		mkdir omc
+		
+        `mkdir omc`
 
 	*	From OPC Terminal Session type the following command:
-
-		exit
+		
+        `exit`
 
 	*	From Local Machine Session we will now copy our cloud agent file over to our OPC Session:
   
-		a.	Locate the file path of the gateway_linux.x64_1.32.0.zip
+		a.	Locate the file path of the 'gateway_linux.x64_1.32.0.zip
+        
 
 		b.	run the following command (File path will depend on where you saved the agent and IP address will be different)
 
-			ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc
+    `ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`
 
 	*	From Local Machine Session ssh back into your OCI    account (Your IP Address will be different than shown below:
 
-		ssh opc@129.***.***.**
+        `ssh opc@129.***.***.**`
+         
 
 	*	From your OPC terminal inside the OMC directory session type the following command to see the contents of your directory.  You should now see a .zip called gateway_linux.x64_1.32.0.zip:
-
-		ls
+		
+         `ls`
 
 	*	From your OPC terminal inside the omc directory unzip the cloudagent file by running the below command
+		
+         `unzip gateway_linux.x64_1.32.0.zip`
 
-		unzip gateway_linux.x64_1.32.0.zip
-
-7. Please also make a note of the values of TENANT_ID and UPLOAD_ROOT, which are shown as the bottom of the page. You will need these information for a later step when you set up the agent.rsp file.
+1. Please also make a note of the values of TENANT_ID and UPLOAD_ROOT, which are shown as the bottom of the page. You will need these information for a later step when you set up the agent.rsp file.
    
 ## Create a Registration Key
 
@@ -569,7 +571,7 @@ You install a gateway by running the AgentInstall.sh script from the command lin
  
   2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
 3. Create a shell script named startomcagent.sh under the /etc/init.d directory using any standard text editor with the following:
-</details>
+
 
 $ su - root
 password
@@ -617,4 +619,4 @@ You are now ready to perform additional installation of agents and the optional 
 Want to Learn More?
 • Getting Started with Oracle Management Cloud
 • Installing a Gateway
-
+</details>
