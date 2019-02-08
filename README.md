@@ -453,9 +453,8 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
 2. Your Sign In procedure varies depending on the type of account that your tenant is configured.
 
---Insert Picture Here--
-
 In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services.
+
 Enter your user id and password.
 
 --Insert Picture Here--
@@ -465,7 +464,7 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
   * Supply the name of your identity domain.
   * Enter your user id and password.
 
-1. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo (highlighted in red) toward the top of the page to open up the navigation menu to the left.
+3. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo (highlighted in red) toward the top of the page to open up the navigation menu to the left.
 
 --Insert Picture Here--
 
@@ -478,7 +477,7 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 --Insert Picture Here--
 
 
-Save and Extract the Gateway Files
+## Save and Extract the Gateway Files
 
 1. On the Oracle Management Cloud home page, click the Global Navigation Menu on the top-left corner and navigate to Administration > Agents.
    
@@ -488,7 +487,7 @@ Save and Extract the Gateway Files
    
 4. A list of link would show up under Download. Click the link on the gateway file that you wish to download.
    
-5. If you download the Gateway file to your Linux machine instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this, use the following steps:
+5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for linux, use the following steps:
 	
 	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the below command (You will use your OCI Public IP Address instead of 129.***.***.**):
 		ssh opc@129.***.***.**
@@ -512,6 +511,7 @@ Save and Extract the Gateway Files
 	*	From Local Machine Session we will now copy our cloud agent file over to our OPC Session:
   
 		a.	Locate the file path of the gateway_linux.x64_1.32.0.zip
+
 		b.	run the following command (File path will depend on where you saved the agent and IP address will be different)
 
 			ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc
@@ -528,24 +528,26 @@ Save and Extract the Gateway Files
 
 		unzip gateway_linux.x64_1.32.0.zip
 
-
-
 7. Please also make a note of the values of TENANT_ID and UPLOAD_ROOT, which are shown as the bottom of the page. You will need these information for a later step when you set up the agent.rsp file.
-2. Create a Registration Key
+   
+## Create a Registration Key
+
 A registration key is issued for your identity domain, and it’s used when you deploy gateways and agents.
+
 1. On the Oracle Management Cloud home page, click the Global Navigation Menu on the top-left
 corner and navigate to Administration > Agents.
-2. On the Agents – Oracle Management Cloud page, click the Registration Keys tab. The Registration
-Keys page opens.
-3. Enter the required details to create a new Registration Key:
-	o In the Name field, specify a name to identify the registration key.
- 
-	o In the Registration Limit field, enter a number that indicates the maximum number of gateways, data collectors, and agents that can be associated with the registration key. If you are not sure, just put 10,000, which should be enough for a trial.
-	o Click Create New Key.
-A new registration key is created. Make a note of this registration “Key Value”, it will be used by
-the AgentInstall.sh script at the time of installation.
 
-3. Edit the Response File
+2. On the Agents – Oracle Management Cloud page, click the Registration Keys tab. The Registration Keys page opens.
+   
+3. Enter the required details to create a new Registration Key:
+   
+	* In the Name field, specify a name to identify the registration key.
+ 
+	* In the Registration Limit field, enter a number that indicates the maximum number of gateways, data collectors, and agents that can be associated with the registration key. If you are not sure, just put 10,000, which should be enough for a trial.
+  
+	* Click Create New Key. A new registration key will then be created. Make a note of this registration “Key Value”, it will be used by the AgentInstall.sh script at the time of installation.
+
+1. Edit the Response File
 The AgentInstall.sh script is used to carry out the actual install of the OMC Gateway. The script requires a set of parameters that are specific to your environment. These parameters are specified in the response file agent.rsp.
 1. On your Linux / UNIX or Microsoft Windows host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Edit the agent.rsp file using any standard text editor. Add your values for the mandatory parameters in the agent.rsp file. Here are example values (make sure to replace these with the correct values for your environment):
 	o TENANT_ID=example-tenant
