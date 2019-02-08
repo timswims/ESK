@@ -291,7 +291,7 @@ After extracting the Zip file as above, you will see a directory named DBLogTria
    $<b> chmod +x ./uploadMyLogTraditional.sh </b>
 </pre>
 
-
+</details>
 <details>
 <summary><b>Using upLoadMyLog</b></summary>
 
