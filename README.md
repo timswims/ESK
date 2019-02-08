@@ -266,18 +266,7 @@ You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some 
 </details>
 
 ## 4. Upload Your Own Logs and Evaluate
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Edwin and luke test
-=======
 Now that you were able to upload some sample logs lets look at what your own logs look like on your enviornment.
-=======
-Now that you have successfuly uploaded sample data you can now upload your own data. 
->>>>>>> 979d435e0491cafc7f0609696f6d3275c39bc8bc
-=======
-Now that you have successfuly uploaded sample data you can now upload your own data inside of uploadMyLog. 
->>>>>>> 0e5328e21ebed44f982b699d443c0178b24fc3e0
 
 <details>
 <summary><b>Deploying uploadMyLog</b></summary>
@@ -366,7 +355,7 @@ To verify the status of the uploads, follow these steps:
    
    ![uploads-1] ![uploads-2] ![uploads-3]
 </details>
->>>>>>> 9ce1189060d850f3b47ea2beac239b04fc9c5db6
+
 
 ## 5. Install a Gateway Agent
 
