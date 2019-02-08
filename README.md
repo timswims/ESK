@@ -184,7 +184,7 @@ To upload the provided sample logs, follow these steps:
 Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.
 
 Ex:
-<pre>
+<pre>   
 Upload name: alertlog.2018-01-07_19:43:25
 Upload name: syslog.2018-01-07_19:43:32
 </pre>
@@ -266,8 +266,87 @@ You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some 
 </details>
 
 ## 4. Upload Your Own Logs and Evaluate
+<<<<<<< HEAD
 Edwin and luke test
+=======
+Now that you were able to upload some sample logs lets look at what your own logs look like on your enviornment.
+
+<details>
+<summary><b>Uploading Sample Logs to Log Analytics</b></summary>
+
+To upload the provided sample logs, follow these steps:
+
+1. Before uploading logs, enter property values to be used in uploading log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
+   - Go to the `SCRIPT_HOME/DBLogTrial/uploadSample/config` directory.
+   - Use an editor of your choice to edit file `upload.properties` to set appropriate values for the following properties:
+   - `UPLOAD_ROOT`: your `OMC_URL`
+   - `IDENTITY_DOMAIN`: your `TENANT_NAME`
+   - `USERNAME`: your OMC username
+   - (Optional) `HTTPS_PROXY`
+
+
+    **Mandatory Properties**
+    <pre>
+    # URL for uploading data to OMC
+    # Examples:
+    # UPLOAD_ROOT=https://inst1-acme.itom.management.us2.oraclecloud.com
+    # UPLOAD_ROOT=https://inst2-xyz.itom.management.europe.oraclecloud.com
+    # UPLOAD_ROOT=https://a123456.itom.management.us2.oraclecloud.com
+    # This is a required parameter. The "https://" part is optional.
+    UPLOAD_ROOT= <br/>
+    # Subscription Identity Domain
+    # EX:
+    # IDENTITY_DOMAIN=acme
+    # This is a required parameter
+    IDENTITY_DOMAIN= <br/>
+    # OMC user name
+    # EX:
+    # USERNAME=john.doe@xyz.com
+    # This is a required parameter
+    USERNAME=
+    </pre>
+
+    **Optional Property**
+    <pre>
+    # If you need to access OMC (Oracle Management Cloud) through a proxy server,
+    # set "HTTPS_PROXY=proxy_host:port
+    # E.g., HTTPS_PROXY=www-proxy.xyz.com:80
+    HTTPS_PROXY=
+    </pre>
+
+2. Go to the `SCRIPT_HOME/DBLogTrial/uploadSample` directory, and run the <span>uploadSample.sh</span> script to upload the sample alert logs and syslog, respectively, as shown below. Enter your OMC password when prompted.
+   <pre>
+   $ <b> cd .. </b>
+   $ <b> ./uploadSample.sh alertlog </b>
+   $ <b> ./uploadSample.sh syslog </b>
+   </pre>
+
+Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.
+
+Ex:
+<pre>   
+Upload name: alertlog.2018-01-07_19:43:25
+Upload name: syslog.2018-01-07_19:43:32
+</pre>
+
+#### Verifying the Status of the Uploads
+
+To verify the status of the uploads, follow these steps:
+
+1.  Log on to Oracle Management Cloud.
+2.  Navigate to Log Analytics.
+    1. From the Welcome to Oracle Management Cloud page, click the **navigation icon** ![alt text][hamburger] on the top-left corner to view the Management Cloud navigation pane if it is not already there. Select **Log Analytics**.
+3.  Navigate to the **Log Admin** page and view status of the uploads.
+    1. From the left navigation pane, select **Log Admin**.
+    2. Select **Uploads**.
+ 3. 
+    4. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
+       1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will seen a green stick in the **Status** field.
+   
+   ![uploads-1] ![uploads-2] ![uploads-3]
+</details>
+>>>>>>> 9ce1189060d850f3b47ea2beac239b04fc9c5db6
 
 ## 5. Install a Gateway Agent
 
-The Oracle Management Cloud (OMC) Gateway is an optional yet vital component of an Oracle Management Cloud deployment. It serves as a channel between Oracle Management Cloud agents and Oracle Management Cloud. While it is possible for the OMC agent that resides on each host to communicate directly with OMC’s backend, for security reasons, an organization may want to limit the number of hosts that can connect to the Internet directly. In this case, it is best to set up one or a small number of OMC Gateway hosts, and enable Internet access only for those hosts.
+
