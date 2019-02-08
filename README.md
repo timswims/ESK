@@ -359,12 +359,12 @@ To verify the status of the uploads, follow these steps:
 
 ## 5. Install a Gateway Agent
 
-hello
+#### Before You Begin
 
-Before You Begin
+##### Background
 
-Background
 
+<details>
 Deploy Oracle Management Cloud Gateway
 Oracle Management Cloud (OMC) Gateway (highlighted in red in the diagram below) is an optional yet vital component of an Oracle Management Cloud deployment. It serves as a channel between Oracle Management Cloud agents and Oracle Management Cloud.
 While it is possible for the OMC agent that resides on each host to communicate directly with OMC’s backend, for security reasons, an organization may want to limit the number of hosts that can connect to the Internet directly. In this case, it is best to set up a small number of OMC Gateway hosts, and enable Internet access only for those hosts.
@@ -547,5 +547,6 @@ You install a gateway by running the AgentInstall.sh script from the command lin
  
   2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
 3. Create a shell script named startomcagent.sh under the /etc/init.d directory using any standard text editor with the following:
+</details>
 
 --stop here for now--
