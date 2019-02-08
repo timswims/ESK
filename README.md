@@ -362,9 +362,9 @@ To verify the status of the uploads, follow these steps:
 <details>
 <summary><b>Deploy Oracle Management Cloud Gateway</b></summary>
 
-#### Before You Begin
+### Before You Begin
 
-##### Background
+### Background
 
 Oracle Management Cloud (OMC) Gateway (highlighted in red in the diagram below) is an optional yet vital component of an Oracle Management Cloud deployment. It serves as a channel between Oracle Management Cloud agents and Oracle Management Cloud.
 
@@ -391,7 +391,7 @@ What Do You Need?
   
 * An installation directory: an empty directory on your host where the agent will be installed. Ensure the directory is created with the required permissions. See the "Permissions Required on the Agent Base Directory" section in Common Prerequisites.
 
-# Download the Oracle Management Cloud Gateway Software
+## Download the Oracle Management Cloud Gateway Software
 
 The Oracle Management Cloud gateway software, including a gateway installation script and an editable response file, is provided in a zip file that you can download from your Oracle Management Cloud console. The zip file is platform specific.
 
@@ -399,7 +399,7 @@ The Oracle Management Cloud gateway software, including a gateway installation s
 
 If you don't have an Oracle Cloud Account, sign up for one using the Registering For a Cloud Account section below. If you already have a cloud account, then skip the Registering For a Cloud Account section section
 
-### Registering For a Cloud Account
+## Registering For a Cloud Account
 
 1.	Go to the Oracle Cloud Infrastructure Page: https://cloud.oracle.com/en_US/cloud-infrastructure.
 
@@ -549,27 +549,34 @@ corner and navigate to Administration > Agents.
   
 	* Click Create New Key. A new registration key will then be created. Make a note of this registration “Key Value”, it will be used by the AgentInstall.sh script at the time of installation.
 
-1. Edit the Response File
+## Edit the Response File
+
 The AgentInstall.sh script is used to carry out the actual install of the OMC Gateway. The script requires a set of parameters that are specific to your environment. These parameters are specified in the response file agent.rsp.
+
 1. On your Linux / UNIX or Microsoft Windows host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Edit the agent.rsp file using any standard text editor. Add your values for the mandatory parameters in the agent.rsp file. Here are example values (make sure to replace these with the correct values for your environment):
-	o TENANT_ID=example-tenant
+	* TENANT_ID=example-tenant
 	Note: this value must be exactly as shown in the UI, the format is instance name-domain name
-	o UPLOAD_ROOT=https://example-tenant.management.us2.oraclecloud.com/ o AGENT_REGISTRATION_KEY=xxxxxxx-yyyyyyyyyyyyyyyyy
-	o AGENT_BASE_DIRECTORY=/oracle/GatewayAgent
+	* UPLOAD_ROOT=https://example-tenant.management.us2.oraclecloud.com/ o AGENT_REGISTRATION_KEY=xxxxxxx-yyyyyyyyyyyyyyyyy
+	* AGENT_BASE_DIRECTORY=/oracle/GatewayAgent
 	(or for example when installing on Microsoft Windows)
 	AGENT_BASE_DIRECTORY=C:\Oracle\GatewayAgent
 	The AGENT_BASE_DIRECTORY is where your agent executables and other run-time files will reside. Create a directory that is owned by the user id of the Oracle software (here, oracle). It is best to have a standard location that is common across all your hosts, so that the agent.rsp file is standardized and you just need to set up the file once.
+
 2. For security reasons, if you are using a proxy server (a dedicated host or system that acts as an intermediary between your host and Oracle Management Cloud) you must define its parameters next. In this case, the proxy server was configured to use authentication, so it requires a user name and password. Edit the following parameters in the agent.rsp file:
 	o OMC_PROXYHOST=www-proxy.example.com o OMC_PROXYPORT=80
 	o OMC_PROXYUSER=oracle
  Save and close the response file.
-4a. Install the Gateway on Linux / UNIX
+
+## 4a. Install the Gateway on Linux / UNIX
 You install a gateway by running the AgentInstall.sh script from the command line. By default, the gateway install script picks up all its required parameters from the response file you just edited in the same directory.
+
 1. On your Linux / UNIX host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Run the installer script using this command:
     ./AgentInstall.sh
  
+ --insert image here--
  
-  2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
+2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
+   
 3. Create a shell script named startomcagent.sh under the /etc/init.d directory using any standard text editor with the following:
 
 
@@ -596,27 +603,51 @@ directories to make the newly created shell script file accessible in the host s
 8. For AIX, create symbolic links under
 /etc/rc.d/rc2.d, /etc/rc.d/rc3.d, and /etc/rc.d/rc5.d
 directories with priority level 81. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
-4b. Install the Gateway on Windows
+
+## 4b. Install the Gateway on Windows
+
 You install a gateway by running the AgentInstall.bat script from the command line. By default, the gateway install script picks up all its required parameters from the response file you just edited in the same directory.
+
 1. On Windows hosts, launch the command line interface as administrator.
+   
 2. Go to the directory where you unzip the package for gateway software, and run AgentInstall.bat. Make sure you run it in a command line window as administrator. The script will install Gateway
 software and set it to start automatically as a Windows service.
-  5. Verify the Gateway Installation
+
+--insert image here--
+
+## Verify the Gateway Installation
 After installing the gateway, you must verify the installation.
+
 1. From the Oracle Management Cloud home page, click the Global Navigation Menu on the top-left
 corner and navigate to Administration > Agents.
+
 2. Click the Gateways tab.
+   
 3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry and match the specified registration key value with the registration key that you had used when deploying the gateway.
- 4. On your Linux / UNIX host, run the following omcli commands to verify that the gateway was successfully deployed:
+
+--insert image here--
+   
+ 1. On your Linux / UNIX host, run the following omcli commands to verify that the gateway was successfully deployed:
 <AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
 <AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+
 5. If installing on a Microsoft Windows host, run the following omcli commands to verify that the gateway was successfully deployed:
-    <AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent
+   
+<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent
+
 - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
-<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+  
+<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity 
+
+- Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+
 The following screenshot shows one of the verification steps as it would appear on a Linux host:
+
+--insert image here--
+
 You are now ready to perform additional installation of agents and the optional Enterprise Manager Data Collector for Oracle Management Cloud.
-Want to Learn More?
+
+## Want to Learn More?
 • Getting Started with Oracle Management Cloud
 • Installing a Gateway
 </details>
