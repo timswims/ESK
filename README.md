@@ -292,7 +292,9 @@ After extracting the Zip file as above, you will see a directory named DBLogTria
 </pre>
 
 
-#### Using uploadMyLog
+<details>
+<summary><b>Using upLoadMyLog</b></summary>
+
 This section provides the steps for using the uploadMyLog package to upload sample logs to explore Log Analytics features.
 
 1. Before uploading your logs, enter property values to be used in uploading the log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
