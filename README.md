@@ -267,17 +267,45 @@ You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some 
 
 ## 4. Upload Your Own Logs and Evaluate
 <<<<<<< HEAD
+<<<<<<< HEAD
 Edwin and luke test
 =======
 Now that you were able to upload some sample logs lets look at what your own logs look like on your enviornment.
+=======
+Now that you have successfuly uploaded sample data you can now upload your own data. 
+>>>>>>> 979d435e0491cafc7f0609696f6d3275c39bc8bc
 
 <details>
-<summary><b>Uploading Sample Logs to Log Analytics</b></summary>
+<summary><b>Deploying uploadMyLog</b></summary>
 
-To upload the provided sample logs, follow these steps:
+ To deploy the uploadMyLog file please follow the directions below.
 
-1. Before uploading logs, enter property values to be used in uploading log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
-   - Go to the `SCRIPT_HOME/DBLogTrial/uploadSample/config` directory.
+1. Download and install uploadMyLog.zip file found in the DBLogTrial.zip package. 
+   <pre>
+   $ <b> cd ~ </b>
+   $ <b> mkdir ./scratch </b>
+   $ <b> cd scratch </b>
+   $ <b> unzip uploadMyLog.zip </b> 
+   </pre>
+
+After extracting the Zip file as above, you will see a directory named DBLogTrial with a subdirectory named uploadMyLog. This document refers to the uploadMyLog directory as SCRIPT_HOME
+
+2. Now we need to make the executable script.
+   <pre>
+   $<b> cd ~/scratch/DBLogTrial </b>
+   $<b> cd uploadMyLog/ </b> 
+   $<b> chmod +x ./uploadMyLog.sh </b>
+   $<b> chmod +x ./uploadMyLogTraditional.sh </b>
+</pre>
+
+
+<details>
+<summary><b>Using upLoadMyLog</b></summary>
+
+This section provides the steps for using the uploadMyLog package to upload sample logs to explore Log Analytics features.
+
+1. Before uploading your logs, enter property values to be used in uploading the log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
+   - Go to the `SCRIPT_HOME/DBLogTrial/uploadMyLog/config` directory.
    - Use an editor of your choice to edit file `upload.properties` to set appropriate values for the following properties:
    - `UPLOAD_ROOT`: your `OMC_URL`
    - `IDENTITY_DOMAIN`: your `TENANT_NAME`
@@ -314,22 +342,11 @@ To upload the provided sample logs, follow these steps:
     HTTPS_PROXY=
     </pre>
 
-2. Go to the `SCRIPT_HOME/DBLogTrial/uploadSample` directory, and run the <span>uploadSample.sh</span> script to upload the sample alert logs and syslog, respectively, as shown below. Enter your OMC password when prompted.
+2. Go to the SCRIPT_HOME directory, and run the uploadMyLog.sh script to upload the sample alert logs and syslog, respectively, as shown below. Enter your OMC password when prompted.
    <pre>
-   $ <b> cd .. </b>
-   $ <b> ./uploadSample.sh alertlog </b>
-   $ <b> ./uploadSample.sh syslog </b>
-   </pre>
-
-Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.
-
-Ex:
-<pre>   
-Upload name: alertlog.2018-01-07_19:43:25
-Upload name: syslog.2018-01-07_19:43:32
-</pre>
-
-#### Verifying the Status of the Uploads
+   $ <b>./uploadMyLog.sh alertlog </b>
+   $ <b>./uploadMyLog.sh syslog </b>
+   </pre> 
 
 To verify the status of the uploads, follow these steps:
 
@@ -339,8 +356,8 @@ To verify the status of the uploads, follow these steps:
 3.  Navigate to the **Log Admin** page and view status of the uploads.
     1. From the left navigation pane, select **Log Admin**.
     2. Select **Uploads**.
- 3. 
-    4. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
+ 1. 
+    3. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
        1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will seen a green stick in the **Status** field.
    
    ![uploads-1] ![uploads-2] ![uploads-3]
