@@ -273,8 +273,30 @@ Now that you have successfuly uploaded sample data you can now upload your own d
 
  To deploy the uploadMyLog file please follow the directions below.
 
-1. ??Before uploading logs, enter property values to be used in uploading log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
-   - Go to the `SCRIPT_HOME/DBLogTrial/uploadSample/config` directory.
+1. Download and install uploadMyLog.zip file found in the DBLogTrial.zip package. 
+   <pre>
+   $ <b> cd ~ </b>
+   $ <b> mkdir ./scratch </b>
+   $ <b> cd scratch </b>
+   $ <b> unzip uploadMyLog.zip </b> 
+   </pre>
+
+After extracting the Zip file as above, you will see a directory named DBLogTrial with a subdirectory named uploadMyLog. This document refers to the uploadMyLog directory as SCRIPT_HOME
+
+2. Now we need to make the executable script.
+   <pre>
+   $<b> cd ~/scratch/DBLogTrial </b>
+   $<b> cd uploadMyLog/ </b> 
+   $<b> chmod +x ./uploadMyLog.sh </b>
+   $<b> chmod +x ./uploadMyLogTraditional.sh </b>
+</pre>
+
+
+#### Using uploadMyLog
+This section provides the steps for using the uploadMyLog package to upload sample logs to explore Log Analytics features.
+
+1. Before uploading your logs, enter property values to be used in uploading the log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
+   - Go to the `SCRIPT_HOME/DBLogTrial/uploadMyLog/config` directory.
    - Use an editor of your choice to edit file `upload.properties` to set appropriate values for the following properties:
    - `UPLOAD_ROOT`: your `OMC_URL`
    - `IDENTITY_DOMAIN`: your `TENANT_NAME`
@@ -311,25 +333,11 @@ Now that you have successfuly uploaded sample data you can now upload your own d
     HTTPS_PROXY=
     </pre>
 
-2. Download and install uploadMyLog.zip file found in the DBLogTrial.zip package. 
+2. Go to the SCRIPT_HOME directory, and run the uploadMyLog.sh script to upload the sample alert logs and syslog, respectively, as shown below. Enter your OMC password when prompted.
    <pre>
-   $ <b> cd ~ </b>
-   $ <b> mkdir ./scratch </b>
-   $ <b> cd scratch </b>
-    $ <b> unzip uploadMyLog.zip </b>
-   </pre>
-
-After extracting the Zip file as above, you will see a directory named DBLogTrial with a subdirectory named uploadMyLog. This document refers to the uploadMyLog directory as SCRIPT_HOME
-
-3. Now we need to make the executable script.
-   <pre>
-   $<b> cd ~/scratch/DBLogTrial </b>
-   $<b> cd uploadMyLog/ </b> 
-   $<b> chmod +x ./uploadMyLog.sh </b>
-   $<b> chmod +x ./uploadMyLogTraditional.sh </b>
-</pre>
-
-#### Using uploadMyLog
+   $ <b>./uploadMyLog.sh alertlog </b>
+   $ <b>./uploadMyLog.sh syslog </b>
+   </pre> 
 
 To verify the status of the uploads, follow these steps:
 
