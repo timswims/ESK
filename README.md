@@ -395,11 +395,9 @@ What Do You Need?
 
 The Oracle Management Cloud gateway software, including a gateway installation script and an editable response file, is provided in a zip file that you can download from your Oracle Management Cloud console. The zip file is platform specific.
 
-## Access the Oracle Management Cloud Console
+## Registering For a Cloud Account
 
 If you don't have an Oracle Cloud Account, sign up for one using the Registering For a Cloud Account section below. If you already have a cloud account, then skip the Registering For a Cloud Account section section
-
-## Registering For a Cloud Account
 
 1.	Go to the Oracle Cloud Infrastructure Page: https://cloud.oracle.com/en_US/cloud-infrastructure.
 
@@ -441,7 +439,7 @@ If you don't have an Oracle Cloud Account, sign up for one using the Registering
 
 10.	Following this completion your cloud account will start to be provisioned and will take a few minutes to be completed.
 
-## Add subtitle here
+## Access the Oracle Management Cloud Console
 
 Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle Management Cloud instance tile should be displayed on the My Services dashboard.
 
