@@ -370,7 +370,9 @@ Some of the information shown on the page includes
 -  The log entries came from the upload whose name is in the Query bar.
 -  The histogram shows the daily volumes of log records. This helps identify any abnormality in record volumes at a glance. You can drill down by clicking a bar on the chart.
 -  The first 25 of the records that came with the upload. The records are in date order from newest to oldest. You can reverse the order by clicking the arrowhead in the Time (<time zone>) field. You can browse the rest of log records by using the pagination at the bottom of the page.
-  --INSERT IMAGE FROM DOC--
+
+
+  ![page-view]
 
 ##### Note - the log entries you see will vary depending on the record in the alertlog and messages logs that you upload. 
 
