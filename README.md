@@ -450,7 +450,7 @@ The Oracle Management Cloud gateway software, including a gateway installation s
 
 If you don't have an Oracle Cloud Account, sign up for one using the Registering For a Cloud Account section below. If you already have a cloud account, then skip the Registering For a Cloud Account section section
 
-1.	Go to the Oracle Cloud Infrastructure Page: https://cloud.oracle.com/en_US/cloud-infrastructure.
+1.	Go to the Oracle Cloud Infrastructure Page: https://cloud.oracle.com/home
 
 2.	At the top of the page click the try for free button. 
 
@@ -508,7 +508,7 @@ If you don't have an Oracle Cloud Account, sign up for one using the Registering
 
 Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle Management Cloud instance tile should be displayed on the My Services dashboard.
 
-1. Go to cloud.oracle.com and click Sign In.
+1. Go to cloud.oracle.com and click Sign In. Home Page: https://cloud.oracle.com/home
 
 2. Your Sign In procedure varies depending on the type of account that your tenant is configured.
 
@@ -544,6 +544,10 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 2. On the **Agents – Oracle Management Cloud** page, click the **Download** tab. The Agent Software Download page is displayed.
    
 3. Select Gateway from the **Agent Type** drop-down list, and select one of the choices (such as Linux (64-bit)) that matches the type of O/S on the host where you will be installing the gateway from the **Operating System** drop-down list. The gateway software link for the gateway you’ve selected is displayed.
+
+<p align="center">
+    <img src="./Tutorial_Images/general/OMC_Download_Page.png" />
+</p>
    
 4. A list of link would show up under Download. Click the link on the gateway file that you wish to download.
    
@@ -648,8 +652,6 @@ You install a gateway by running the AgentInstall.sh script from the command lin
    
     **`./AgentInstall.sh`** 
  
- --insert image here--
- 
 2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
 
     **`$ su - root`**
@@ -710,8 +712,6 @@ You install a gateway by running the AgentInstall.bat script from the command li
 2. Go to the directory where you unzip the package for gateway software, and run AgentInstall.bat. Make sure you run it in a command line window as administrator. The script will install Gateway
 software and set it to start automatically as a Windows service.
 
---insert image here--
-
 ### 5. Verify the Gateway Installation
 After installing the gateway, you must verify the installation.
 
@@ -720,10 +720,8 @@ After installing the gateway, you must verify the installation.
 2. Click the **Gateways** tab.
    
 3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry and match the specified registration key value with the registration key that you had used when deploying the gateway.
-
---insert image here--
    
- 4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
+4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
 
     *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
 
@@ -737,12 +735,7 @@ After installing the gateway, you must verify the installation.
 
 The following screenshot shows one of the verification steps as it would appear on a Linux host:
 
---insert image here--
-
 You are now ready to perform additional installation of agents and the optional Enterprise Manager Data Collector for Oracle Management Cloud.
 
-### Want to Learn More?
-* Getting Started with Oracle Management Cloud
-* Installing a Gateway
 </details>
 
