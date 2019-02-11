@@ -683,29 +683,30 @@ You install a gateway by running the AgentInstall.sh script from the command lin
     and */etc/rc.d/rc6.d*
    directories to make the newly created shell script file accessible in the host startup process. Prefix the symbolic link with S and the priority level. For example, to create the symbolic links with priority level 81, run the following commands:
 
-   **'ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh'**
+   **`ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh`**
 
-   **'ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh'** 
+   **`ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh`**
 
-   **'ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh'**
+   **`ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh`**
+   
+   **`ln -s /etc/init.d/startomcagent.sh /etc/rc6.d/S81startomcagent.sh`**
 
-   **'ln -s /etc/init.d/startomcagent.sh /etc/rc6.d/S81startomcagent.sh'**
    
 7. For Solaris, create symbolic links under /etc/rc.d/rc2.d, /etc/rc.d/rc3.d directories c. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
 
-    **'ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh'** 
+    **`ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh`**
 
-    **'ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh'**
+    **`ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh`**
    
 8.  For AIX, create symbolic links under
 */etc/rc.d/rc2.d, /etc/rc.d/rc3.d,* and */etc/rc.d/rc5.d*
 directories with priority level 81. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
 
-    **'ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh'** 
+    **`ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh`**
 
-    **'ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh'** 
+    **`ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh`**
 
-    **'ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh'**
+    **`ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh`**
 
 ### 4b. Install the Gateway on Windows
 
