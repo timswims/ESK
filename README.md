@@ -605,10 +605,6 @@ A registration key is issued for your identity domain, and it’s used when you 
 corner and navigate to **Administration > Agents.**
 
 2. On the **Agents – Oracle Management Cloud** page, click the **Registration Keys** tab. The Registration Keys page opens.
-
-<p align="center">
-    <img src="./Tutorial_Images/general/OMC_Key_Page.png" />
-</p>
    
 3. Enter the required details to create a new Registration Key:
    
@@ -617,6 +613,10 @@ corner and navigate to **Administration > Agents.**
 	* In the **Registration Limit** field, enter a number that indicates the maximum number of gateways, data collectors, and agents that can be associated with the registration key. If you are not sure, just put 10,000, which should be enough for a trial.
   
 	* Click **Create New Key.** A new registration key will then be created. Make a note of this registration “Key Value”, it will be used by the AgentInstall.sh script at the time of installation.
+  
+  <p align="center">
+    <img src="./Tutorial_Images/general/OMC_Key_Page.png" />
+  </p>
 
 ### 3. Edit the Response File
 
@@ -688,7 +688,7 @@ You install a gateway by running the AgentInstall.sh script from the command lin
    **`ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh`**
 
    **`ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh`**
-   
+
    **`ln -s /etc/init.d/startomcagent.sh /etc/rc6.d/S81startomcagent.sh`**
 
    
