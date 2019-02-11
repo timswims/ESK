@@ -351,7 +351,7 @@ This section provides the steps for using the uploadMyLog package to upload samp
    $ <b>./uploadMyLog.sh syslog </b>
    </pre> 
 
-   #####Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.Examples of output lines containing upload names are:
+   ##### Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.Examples of output lines containing upload names are:
    <pre>
     <b>Upload name: alertlog.2018-01-07_19:43:25</b>
     <b>Upload name: syslog.2018-01-07_19:43:32</b>
