@@ -349,7 +349,7 @@ To verify the status of the uploads, follow these steps:
 3.  Navigate to the **Log Admin** page and view status of the uploads.
     1. From the left navigation pane, select **Log Admin**.
     2. Select **Uploads**.
- 1. 
+  
     3. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
        1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will seen a green stick in the **Status** field.
    
@@ -365,7 +365,7 @@ To view the records from an upload, follow these steps.
 2. From the Uploads page, click the **navigation icon** ![alt text][hamburger}], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
 3. From the Log Explorer page, you can view the alert log records from the upllad that you selected. 
 
-##Note - the log entries you see will vary depending on the record in the alertlog and messages logs that you upload. 
+# Note - the log entries you see will vary depending on the record in the alertlog and messages logs that you upload. 
 
 </details>
 
@@ -587,27 +587,32 @@ You install a gateway by running the AgentInstall.sh script from the command lin
 
 1. On your Linux / UNIX host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Run the installer script using this command:
    
-`./AgentInstall.sh` 
+    **`./AgentInstall.sh`** 
  
  --insert image here--
  
 2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
 
- `$ su - root`
- `password`
- `#`
+    **`$ su - root`**
+    **`password`**
+    **`#`**
    
 3. Create a shell script named startomcagent.sh under the /etc/init.d directory using any standard text editor with the following:
 
 
-`#!/bin/sh`
-`su - <Agent_Install_User> -c`
-`<Agent_Base_Directory>/agent_inst/bin/omcli start agent`
+    **`#!/bin/sh`**
+    **`su - <Agent_Install_User> -c`**
+    **`<Agent_Base_Directory>/agent_inst/bin/omcli start agent`**
  
 For example, if the gateway is installed under the /oracle/omc directory and gateway installation owner is oracle, then the content of the shell script should be as follows:
  
+<<<<<<< HEAD
 '#!/bin/sh'
 su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”
+=======
+*#!/bin/sh*
+*su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”*
+>>>>>>> 3118e81c824252d6a39f40ae23020aee9c6de780
 
 4. Save the script file as startomcagent.sh.
    
