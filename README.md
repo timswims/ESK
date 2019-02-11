@@ -626,10 +626,10 @@ You install a gateway by running the AgentInstall.sh script from the command lin
     **`su - <Agent_Install_User> -c`**
     **`<Agent_Base_Directory>/agent_inst/bin/omcli start agent`**
  
-For example, if the gateway is installed under the /oracle/omc directory and gateway installation owner is oracle, then the content of the shell script should be as follows:
+    For example, if the gateway is installed under the /oracle/omc directory and gateway installation owner is oracle, then the content of the shell script should be as follows:
  
-*#!/bin/sh*
-*su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”*
+    *#!/bin/sh*
+    *su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”*
 
 4. Save the script file as startomcagent.sh.
    
