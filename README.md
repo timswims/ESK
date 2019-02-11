@@ -605,6 +605,10 @@ A registration key is issued for your identity domain, and it’s used when you 
 corner and navigate to **Administration > Agents.**
 
 2. On the **Agents – Oracle Management Cloud** page, click the **Registration Keys** tab. The Registration Keys page opens.
+
+<p align="center">
+    <img src="./Tutorial_Images/general/OMC_Gateway_Page.png" />
+</p>
    
 3. Enter the required details to create a new Registration Key:
    
@@ -720,6 +724,10 @@ After installing the gateway, you must verify the installation.
 2. Click the **Gateways** tab.
    
 3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry and match the specified registration key value with the registration key that you had used when deploying the gateway.
+
+<p align="center">
+    <img src="./Tutorial_Images/general/OMC_Key_Page.png" />
+</p>
    
 4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
 
