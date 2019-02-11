@@ -356,6 +356,16 @@ To verify the status of the uploads, follow these steps:
    ![uploads-1] ![uploads-2] ![uploads-3]
 </details>
 
+</details>
+<details>
+<summary><b>Viewing Uploaded Log Records</b></summary>
+
+To view the records from an upload, follow these steps.
+1. Navigate to the Uploads page. If necessary see, (#verifying-the-status-of-the-uploads)
+2. From the Uploads page, click the **navigation icon** ![alt text][hamburger}], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
+
+
+</details>
 
 ## 5. Install a Gateway Agent
 
