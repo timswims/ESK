@@ -42,6 +42,7 @@ An application that allows you to condense logs to find issues faster.
     - [Using uploadMyLog](#Using-uploadMyLog)
     - [Viewing Uploaded Log Records](#Viewing-Uploaded-Log-Records)
   - [5. Install a Gateway Agent](#5-install-a-gateway-agent)
+    - [Deploy Oracle Management Cloud Gateway](#Deploy-Oracle-Management-Cloud-Gateway)
 
 ## Before You Begin
 
@@ -452,7 +453,6 @@ If you don't have an Oracle Cloud Account, sign up for one using the Registering
 1.	Go to the Oracle Cloud Infrastructure Page: https://cloud.oracle.com/en_US/cloud-infrastructure.
 
 2.	At the top of the page click the try for free button. 
-	--Insert Picture Here--
 
 3.	Here is where you will put in the information for your trial account
 
@@ -510,13 +510,13 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
 1. Go to cloud.oracle.com and click Sign In.
 
-<p align="center">
-    <img src="./Tutorial_Images/general/Github_SignIn.png" />
-</p>
-
 2. Your Sign In procedure varies depending on the type of account that your tenant is configured.
 
     In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services.
+
+    <p align="center">
+    <img src="./Tutorial_Images/general/Github_SignIn.png" />
+    </p>
 
     Enter your user id and password.
 
