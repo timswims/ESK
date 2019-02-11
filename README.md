@@ -300,7 +300,7 @@ After extracting the Zip file as above, you will see a directory named DBLogTria
 
 This section provides the steps for using the uploadMyLog package to upload sample logs to explore Log Analytics features.
 
-1. Before uploading your logs, enter property values to be used in uploading the log in file `SCRIPT_HOME/DBLogTrial/uploadSample/config/upload.properties`.
+1. Before uploading your logs, enter property values to be used in uploading the log in file `SCRIPT_HOME/DBLogTrial/uploadMyLog/config/upload.properties`.
    - Go to the `SCRIPT_HOME/DBLogTrial/uploadMyLog/config` directory.
    - Use an editor of your choice to edit file `upload.properties` to set appropriate values for the following properties:
    - `UPLOAD_ROOT`: your `OMC_URL`
@@ -337,11 +337,24 @@ This section provides the steps for using the uploadMyLog package to upload samp
     # E.g., HTTPS_PROXY=www-proxy.xyz.com:80
     HTTPS_PROXY=
     </pre>
-
-2. Go to the SCRIPT_HOME directory, and run the uploadMyLog.sh script to upload the sample alert logs and syslog, respectively, as shown below. Enter your OMC password when prompted.
+2. To upload your own Oracle Database alertlog, take the log and zip it into an alertlog.zip file. Move the alertlog.zip file into <SCRIPT_HOME>/logs. Please ensure you name the file exactly alertlog.zip, as the uploader will be looking for a file of that name.
+   <pre>
+   $ <b>zip alertlog.zip ./<your alertlog filename></b>
+   </pre> 
+3. To upload your own system logfile (typically the file /var/log/messages), take the log and zip it into a messages.zip file. Move messages.zip file into <SCRIPT_HOME>/logs. Please ensure you name the file exactly messages.zip, as the uploader will be looking for a file of that name.
+    <pre>
+   $ <b>zip messages.zip ./messages></b>
+   </pre> 
+4. Go to the SCRIPT_HOME directory, and run the uploadMyLog.sh script to upload the sample alert logs and syslog, respectively, as shown below. Enter your OMC password when prompted.
    <pre>
    $ <b>./uploadMyLog.sh alertlog </b>
    $ <b>./uploadMyLog.sh syslog </b>
+   </pre> 
+
+   #####Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.Examples of output lines containing upload names are:
+   <pre>
+    <b>Upload name: alertlog.2018-01-07_19:43:25</b>
+    <b>Upload name: syslog.2018-01-07_19:43:32</b>
    </pre> 
 
 To verify the status of the uploads, follow these steps:
