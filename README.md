@@ -385,7 +385,6 @@ To view the records from an upload, follow these steps.
 3. From the Log Explorer page, you can view the alert log records from the upload that you selected.
 
 ![log-alerts]
-
    
 Some of the information shown on the page includes
 
