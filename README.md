@@ -551,7 +551,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
    
 4. A list of link would show up under Download. Click the link on the gateway file that you wish to download.
    
-5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for linux, use the following steps:
+5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux/Unix, use the following steps:
 	
 	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the      below command (You will use your OCI Public IP Address instead of 129.***.***.**):
 		
