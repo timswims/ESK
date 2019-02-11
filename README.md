@@ -510,13 +510,13 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
 2. Your Sign In procedure varies depending on the type of account that your tenant is configured.
 
-In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services.
+    In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services.
 
-Enter your user id and password.
+    Enter your user id and password.
 
 --Insert Picture Here--
 
-On the other hand, if you have a Traditional Cloud Account (most likely because it was provisioned prior to April 2018), select “Traditional Cloud Account” as account type. Select “US Commercial 2 (us2)” for data center if your account was provisioned in the United States.
+    On the other hand, if you have a Traditional Cloud Account (most likely because it was provisioned prior to April 2018), select “Traditional Cloud Account” as account type. Select “US Commercial 2 (us2)” for data center if your account was provisioned in the United States.
   
   * Supply the name of your identity domain.
   
