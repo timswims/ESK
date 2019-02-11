@@ -415,7 +415,9 @@ Oracle Management Cloud (OMC) Gateway (highlighted in red in the diagram below) 
 While it is possible for the OMC agent that resides on each host to communicate directly with OMC’s backend, for security reasons, an organization may want to limit the number of hosts that can connect to the Internet directly. In this case, it is best to set up a small number of OMC Gateway hosts, and enable Internet access only for those hosts.
 For a trial, since the number of hosts may be small, it is possible to do a trial without the gateway. However, if there is a desire to limit security exposure even in a trial environment, then it is a good idea to set up the OMC Gateway.
 
---insert picture--
+<p align="center">
+    <img src="./Tutorial_Images/general/Github_Gateway_Chart.png" />
+</p>
 
 There are 5 steps for deploying OMC Gateway.
 
@@ -478,7 +480,9 @@ If you don't have an Oracle Cloud Account, sign up for one using the Registering
   
 	* Zip/Postal Code
   
---Insert Picture Here--
+<p align="center">
+    <img src="./Tutorial_Images/general/OCI_Section_1.png" />
+</p>
 
 5.	For the Verification Code Section (Section 2), fill out the information for this as well.
 
@@ -486,7 +490,9 @@ If you don't have an Oracle Cloud Account, sign up for one using the Registering
   
 	* Mobile
   
---Insert Picture Here--
+<p align="center">
+    <img src="./Tutorial_Images/general/OCI_Section_2.png" />
+</p>
 
 6.	Click on the Request Code button to receive the verification code via a text message to the mobile number that you provided when you filled out the Mobile Number Field.
 
