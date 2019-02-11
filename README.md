@@ -514,23 +514,23 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 	
 	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the      below command (You will use your OCI Public IP Address instead of 129.***.***.**):
 		
-        `ssh opc@129.***.***.**`
+        **`ssh opc@129.***.***.**`**
 
 	*	From OPC Terminal Session type pwd to see where you are currently at in your         directory.  You should see the following:
 
-         `/home/opc`
+         **`/home/opc`**
 
 	*	From OPC Terminal Session  Make a directory called agent.  Run the following command in your terminal:
 		
-        `mkdir agent`
+        **`mkdir agent`**
 
 	*	From OPC Terminal Session Make a directory called omc.  Run the following command in your terminal:
 		
-        `mkdir omc`
+        **`mkdir omc`**
 
 	*	From OPC Terminal Session type the following command:
 		
-        `exit`
+        **`exit`**
 
 	*	From Local Machine Session we will now copy our cloud agent file over to our OPC Session:
   
@@ -539,7 +539,7 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 
 		b.	run the following command (File path will depend on where you saved the agent and IP address will be different)
 
-       **`ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`**
+        **`ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`**
 
 	*	From Local Machine Session ssh back into your OCI    account (Your IP Address will be different than shown below:
 
@@ -548,11 +548,11 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 
 	*	From your OPC terminal inside the OMC directory session type the following command to see the contents of your directory.  You should now see a .zip called gateway_linux.x64_1.32.0.zip:
 		
-         `ls`
+         **`ls`**
 
 	*	From your OPC terminal inside the omc directory unzip the cloudagent file by running the below command
 		
-         `unzip gateway_linux.x64_1.32.0.zip`
+         **`unzip gateway_linux.x64_1.32.0.zip`**
 
 6. Please also make a note of the values of TENANT_ID and UPLOAD_ROOT, which are shown as the bottom of the page. You will need these information for a later step when you set up the agent.rsp file.
    
