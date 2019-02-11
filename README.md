@@ -362,7 +362,7 @@ To verify the status of the uploads, follow these steps:
 <details>
 <summary><b>Deploy Oracle Management Cloud Gateway</b></summary>
 
-### Before You Begin
+### Before You Begin:
 
 ### Background
 
@@ -391,11 +391,11 @@ What Do You Need?
   
 * An installation directory: an empty directory on your host where the agent will be installed. Ensure the directory is created with the required permissions. See the "Permissions Required on the Agent Base Directory" section in Common Prerequisites.
 
-## Download the Oracle Management Cloud Gateway Software
+### Download the Oracle Management Cloud Gateway Software
 
 The Oracle Management Cloud gateway software, including a gateway installation script and an editable response file, is provided in a zip file that you can download from your Oracle Management Cloud console. The zip file is platform specific.
 
-## Registering For a Cloud Account
+### Registering For a Cloud Account
 
 If you don't have an Oracle Cloud Account, sign up for one using the Registering For a Cloud Account section below. If you already have a cloud account, then skip the Registering For a Cloud Account section section
 
@@ -439,7 +439,7 @@ If you don't have an Oracle Cloud Account, sign up for one using the Registering
 
 10.	Following this completion your cloud account will start to be provisioned and will take a few minutes to be completed.
 
-## Access the Oracle Management Cloud Console
+### Access the Oracle Management Cloud Console
 
 Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle Management Cloud instance tile should be displayed on the My Services dashboard.
 
@@ -474,7 +474,7 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 
 --Insert Picture Here--
 
-## Save and Extract the Gateway Files
+### Save and Extract the Gateway Files
 
 1. On the Oracle Management Cloud home page, click the Global Navigation Menu on the top-left corner and navigate to Administration > Agents.
    
@@ -513,7 +513,7 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 
 		b.	run the following command (File path will depend on where you saved the agent and IP address will be different)
 
-    `ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`
+       `ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`
 
 	*	From Local Machine Session ssh back into your OCI    account (Your IP Address will be different than shown below:
 
@@ -530,7 +530,7 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 
 1. Please also make a note of the values of TENANT_ID and UPLOAD_ROOT, which are shown as the bottom of the page. You will need these information for a later step when you set up the agent.rsp file.
    
-## Create a Registration Key
+### Create a Registration Key
 
 A registration key is issued for your identity domain, and it’s used when you deploy gateways and agents.
 
@@ -547,7 +547,7 @@ corner and navigate to Administration > Agents.
   
 	* Click Create New Key. A new registration key will then be created. Make a note of this registration “Key Value”, it will be used by the AgentInstall.sh script at the time of installation.
 
-## Edit the Response File
+### Edit the Response File
 
 The AgentInstall.sh script is used to carry out the actual install of the OMC Gateway. The script requires a set of parameters that are specific to your environment. These parameters are specified in the response file agent.rsp.
 
@@ -565,7 +565,7 @@ The AgentInstall.sh script is used to carry out the actual install of the OMC Ga
 	o OMC_PROXYUSER=oracle
  Save and close the response file.
 
-## 4a. Install the Gateway on Linux / UNIX
+### 4a. Install the Gateway on Linux / UNIX
 You install a gateway by running the AgentInstall.sh script from the command line. By default, the gateway install script picks up all its required parameters from the response file you just edited in the same directory.
 
 1. On your Linux / UNIX host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Run the installer script using this command:
