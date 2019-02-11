@@ -12,6 +12,7 @@
 [drill-down]: ./Tutorial_Images/log_analytics/drill_down.gif
 [correlating-logs]: ./Tutorial_Images/log_analytics/correlating_logs.gif
 [page-view]: ./Tutorial_Images/general/page_view.png
+[log-alerts]: ./Tutorial_Images/log_analytics/logalerts.gif
 
 
 
@@ -220,6 +221,8 @@ To view the records from an upload, follow these steps:
    ![uploads-4]
 3. From the log explorer page, you can view the alert log records from the upload that you selected.
 
+
+
 Some of the information shown on the page includes:
 
 - The uploaded alert log entries are for the period from August 9 to August 24, 2017.
@@ -378,13 +381,11 @@ To verify the status of the uploads, follow these steps:
 
 To view the records from an upload, follow these steps.
 1. Navigate to the Uploads page. If necessary see, [Verifying the Status of the Uploads](#verifying-the-status-of-the-uploads)
-   
-   -INSERT GIF-
-
 2. From the Uploads page, click the **navigation icon** ![alt text][hamburger], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
-3. From the Log Explorer page, you can view the alert log records from the upllad that you selected.
-   
-    --INSERT GIF--
+3. From the Log Explorer page, you can view the alert log records from the upload that you selected.
+
+![log-alerts]
+
    
 Some of the information shown on the page includes
 
