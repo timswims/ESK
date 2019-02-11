@@ -416,7 +416,7 @@ While it is possible for the OMC agent that resides on each host to communicate 
 For a trial, since the number of hosts may be small, it is possible to do a trial without the gateway. However, if there is a desire to limit security exposure even in a trial environment, then it is a good idea to set up the OMC Gateway.
 
 <p align="center">
-    <img src="./Tutorial_Images/general/Github_Gateway_Chart.png" />
+    <img src="./Tutorial_Images/general/Github_Gateway _Chart.png" />
 </p>
 
 There are 5 steps for deploying OMC Gateway.
