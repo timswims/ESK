@@ -699,9 +699,6 @@ The following screenshot shows one of the verification steps as it would appear 
 You are now ready to perform additional installation of agents and the optional Enterprise Manager Data Collector for Oracle Management Cloud.
 
 ### Want to Learn More?
-• Getting Started with Oracle Management Cloud
-• Installing a Gateway
+* Getting Started with Oracle Management Cloud
+* Installing a Gateway
 </details>
-
-Random text: kajfe
-hello
