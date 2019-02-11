@@ -11,7 +11,7 @@
 [clustering]: ./Tutorial_Images/log_analytics/clustering.gif
 [drill-down]: ./Tutorial_Images/log_analytics/drill_down.gif
 [correlating-logs]: ./Tutorial_Images/log_analytics/correlating_logs.gif
-
+[page-view]: ./Tutorial_Images/general/page_view.png
 
 
 
@@ -37,6 +37,9 @@ An application that allows you to condense logs to find issues faster.
       - [Examining Potential Issues](#examining-potential-issues)
       - [Correlating Logs](#correlating-logs)
   - [4. Upload Your Own Logs and Evaluate](#4-upload-your-own-logs-and-evaluate)
+    - [Deploying uploadMyLog](#deploying-uploadMyLog)
+    - [Using uploadMyLog](#Using-uploadMyLog)
+    - [Viewing Uploaded Log Records](#Viewing-Uploaded-Log-Records)
   - [5. Install a Gateway Agent](#5-install-a-gateway-agent)
 
 ## Before You Begin
@@ -361,18 +364,25 @@ To verify the status of the uploads, follow these steps:
 <summary><b>Viewing Uploaded Log Records</b></summary>
 
 To view the records from an upload, follow these steps.
-1. Navigate to the Uploads page. If necessary see, (#verifying-the-status-of-the-uploads)
+1. Navigate to the Uploads page. If necessary see, [Verifying the Status of the Uploads](#verifying-the-status-of-the-uploads)
+   
    -INSERT GIF-
+
 2. From the Uploads page, click the **navigation icon** ![alt text][hamburger}], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
-3. From the Log Explorer page, you can view the alert log records from the upllad that you selected. --INSERT GIF--
+3. From the Log Explorer page, you can view the alert log records from the upllad that you selected.
+   
+    --INSERT GIF--
+   
 Some of the information shown on the page includes
+
 -  The period of the uploaded alert log entries.
 -  The log entries came from the upload whose name is in the Query bar.
 -  The histogram shows the daily volumes of log records. This helps identify any abnormality in record volumes at a glance. You can drill down by clicking a bar on the chart.
 -  The first 25 of the records that came with the upload. The records are in date order from newest to oldest. You can reverse the order by clicking the arrowhead in the Time (<time zone>) field. You can browse the rest of log records by using the pagination at the bottom of the page.
 
-
-  ![page-view]
+<p align="center">
+    <img src="./Tutorial_Images/general/page_view.png" />
+</p>
 
 ##### Note - the log entries you see will vary depending on the record in the alertlog and messages logs that you upload. 
 
