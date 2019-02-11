@@ -381,7 +381,7 @@ To view the records from an upload, follow these steps.
    
    -INSERT GIF-
 
-2. From the Uploads page, click the **navigation icon** ![alt text][hamburger}], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
+2. From the Uploads page, click the **navigation icon** ![alt text][hamburger], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
 3. From the Log Explorer page, you can view the alert log records from the upllad that you selected.
    
     --INSERT GIF--
