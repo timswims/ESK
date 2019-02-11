@@ -640,23 +640,29 @@ For example, if the gateway is installed under the /oracle/omc directory and gat
     and */etc/rc.d/rc6.d*
    directories to make the newly created shell script file accessible in the host startup process. Prefix the symbolic link with S and the priority level. For example, to create the symbolic links with priority level 81, run the following commands:
 
-   *ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh* 
+   *ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh*
+
    *ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh* 
-   *ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh* 
+
+   *ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh*
+
    *ln -s /etc/init.d/startomcagent.sh /etc/rc6.d/S81startomcagent.sh*
    
 7. For Solaris, create symbolic links under /etc/rc.d/rc2.d, /etc/rc.d/rc3.d directories c. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
 
-*ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh* 
-*ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh*
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh* 
+
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh*
    
 8.  For AIX, create symbolic links under
 */etc/rc.d/rc2.d, /etc/rc.d/rc3.d,* and */etc/rc.d/rc5.d*
 directories with priority level 81. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
 
-*ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh* 
-*ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh* 
-*ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh*
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh* 
+
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh* 
+
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh*
 
 ### 4b. Install the Gateway on Windows
 
@@ -682,15 +688,15 @@ After installing the gateway, you must verify the installation.
    
  4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
 
-*<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
 
-*<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
 
 5. If installing on a Microsoft Windows host, run the following *omcli* commands to verify that the gateway was successfully deployed:
    
-*<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
+    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
   
-*<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
 
 The following screenshot shows one of the verification steps as it would appear on a Linux host:
 
