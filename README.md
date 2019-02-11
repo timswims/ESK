@@ -604,8 +604,9 @@ You install a gateway by running the AgentInstall.sh script from the command lin
     **`su - <Agent_Install_User> -c`**
     **`<Agent_Base_Directory>/agent_inst/bin/omcli start agent`**
  
-For example, if the gateway is installed under the /oracle/omc directory and gateway installation owner is oracle, then the content of the shell script should be as follows:
+    For example, if the gateway is installed under the /oracle/omc directory and gateway installation owner is oracle, then the content of the shell script should be as follows:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 '#!/bin/sh'
 su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”
@@ -613,6 +614,10 @@ su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”
 *#!/bin/sh*
 *su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”*
 >>>>>>> 3118e81c824252d6a39f40ae23020aee9c6de780
+=======
+    *#!/bin/sh*
+    *su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”*
+>>>>>>> 13bd5687ceef1df18759fbe6b287bcd58fbf337c
 
 4. Save the script file as startomcagent.sh.
    
@@ -623,17 +628,41 @@ su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”
     and /etc/rc.d/rc6.d
    directories to make the newly created shell script file accessible in the host startup process. Prefix the symbolic link with S and the priority level. For example, to create the symbolic links with priority level 81, run the following commands:
 
+<<<<<<< HEAD
    ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh ln -s /etc/init.d/startomcagent.sh /etc/rc6.d/S81startomcagent.sh
    
 7. For Solaris, create symbolic links under /etc/rc.d/rc2.d, /etc/rc.d/rc3.d directories c. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
 
 ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh
+=======
+   *ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh*
+
+   *ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh* 
+
+   *ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh*
+
+   *ln -s /etc/init.d/startomcagent.sh /etc/rc6.d/S81startomcagent.sh*
+   
+7. For Solaris, create symbolic links under /etc/rc.d/rc2.d, /etc/rc.d/rc3.d directories c. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
+
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh* 
+
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh*
+>>>>>>> 13bd5687ceef1df18759fbe6b287bcd58fbf337c
    
 8.  For AIX, create symbolic links under
 /etc/rc.d/rc2.d, /etc/rc.d/rc3.d, and /etc/rc.d/rc5.d
 directories with priority level 81. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
 
+<<<<<<< HEAD
 ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh
+=======
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh* 
+
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh* 
+
+    *ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh*
+>>>>>>> 13bd5687ceef1df18759fbe6b287bcd58fbf337c
 
 ### 4b. Install the Gateway on Windows
 
@@ -660,15 +689,27 @@ corner and navigate to Administration > Agents.
    
  4. On your Linux / UNIX host, run the following omcli commands to verify that the gateway was successfully deployed:
 
+<<<<<<< HEAD
 <AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
 
 <AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+=======
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
+
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+>>>>>>> 13bd5687ceef1df18759fbe6b287bcd58fbf337c
 
 5. If installing on a Microsoft Windows host, run the following omcli commands to verify that the gateway was successfully deployed:
    
+<<<<<<< HEAD
 <AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
   
 <AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+=======
+    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
+  
+    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+>>>>>>> 13bd5687ceef1df18759fbe6b287bcd58fbf337c
 
 The following screenshot shows one of the verification steps as it would appear on a Linux host:
 
