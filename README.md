@@ -508,19 +508,17 @@ If you don't have an Oracle Cloud Account, sign up for one using the Registering
 
 Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle Management Cloud instance tile should be displayed on the My Services dashboard.
 
---Add Picture Here--
-
 1. Go to cloud.oracle.com and click Sign In.
 
---Insert Picture Here--
+<p align="center">
+    <img src="./Tutorial_Images/general/Github_SignIn.png" />
+</p>
 
 2. Your Sign In procedure varies depending on the type of account that your tenant is configured.
 
     In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services.
 
     Enter your user id and password.
-
---Insert Picture Here--
 
     On the other hand, if you have a Traditional Cloud Account (most likely because it was provisioned prior to April 2018), select “Traditional Cloud Account” as account type. Select “US Commercial 2 (us2)” for data center if your account was provisioned in the United States.
   
@@ -530,15 +528,14 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
 3. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo (highlighted in red) toward the top of the page to open up the navigation menu to the left.
 
---Insert Picture Here--
-
 4. On the navigation menu, click on Services to expand the list of services, and click Management Cloud.
 
---Insert Picture Here--
   
 5. This takes you to the Oracle Management Cloud home page, which looks like the following. You will be using the **Global Navigation Menu** to the left to carry out the remaining setup. If the menu is hidden, click the link next to Oracle logo (highlighted in red) to bring up the menu.
 
---Insert Picture Here--
+<p align="center">
+    <img src="./Tutorial_Images/general/OMC_Home_Screen.png" />
+</p>
 
 #### Save and Extract the Gateway Files
 
