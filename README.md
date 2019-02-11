@@ -362,10 +362,17 @@ To verify the status of the uploads, follow these steps:
 
 To view the records from an upload, follow these steps.
 1. Navigate to the Uploads page. If necessary see, (#verifying-the-status-of-the-uploads)
+   -INSERT GIF-
 2. From the Uploads page, click the **navigation icon** ![alt text][hamburger}], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
-3. From the Log Explorer page, you can view the alert log records from the upllad that you selected. 
+3. From the Log Explorer page, you can view the alert log records from the upllad that you selected. --INSERT GIF--
+Some of the information shown on the page includes
+-  The period of the uploaded alert log entries.
+-  The log entries came from the upload whose name is in the Query bar.
+-  The histogram shows the daily volumes of log records. This helps identify any abnormality in record volumes at a glance. You can drill down by clicking a bar on the chart.
+-  The first 25 of the records that came with the upload. The records are in date order from newest to oldest. You can reverse the order by clicking the arrowhead in the Time (<time zone>) field. You can browse the rest of log records by using the pagination at the bottom of the page.
+  --INSERT IMAGE FROM DOC--
 
-# Note - the log entries you see will vary depending on the record in the alertlog and messages logs that you upload. 
+##### Note - the log entries you see will vary depending on the record in the alertlog and messages logs that you upload. 
 
 </details>
 
