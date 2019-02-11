@@ -539,11 +539,11 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
 
 		b.	run the following command (File path will depend on where you saved the agent and IP address will be different)
 
-       `ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`
+       **`ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`**
 
 	*	From Local Machine Session ssh back into your OCI    account (Your IP Address will be different than shown below:
 
-        `ssh opc@129.***.***.**`
+        **`ssh opc@129.***.***.**`**
          
 
 	*	From your OPC terminal inside the OMC directory session type the following command to see the contents of your directory.  You should now see a .zip called gateway_linux.x64_1.32.0.zip:
