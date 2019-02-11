@@ -488,7 +488,7 @@ On the other hand, if you have a Traditional Cloud Account (most likely because 
   
   * Enter your user id and password.
 
-1. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo (highlighted in red) toward the top of the page to open up the navigation menu to the left.
+3. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo (highlighted in red) toward the top of the page to open up the navigation menu to the left.
 
 --Insert Picture Here--
 
@@ -609,26 +609,26 @@ You install a gateway by running the AgentInstall.sh script from the command lin
 
 1. On your Linux / UNIX host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Run the installer script using this command:
    
-`./AgentInstall.sh` 
+    **`./AgentInstall.sh`** 
  
  --insert image here--
  
 2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
 
- `$ su - root`
- `password`
- `#`
+    **`$ su - root`**
+    **`password`**
+    **`#`**
    
 3. Create a shell script named startomcagent.sh under the /etc/init.d directory using any standard text editor with the following:
 
 
-`#!/bin/sh`
-`su - <Agent_Install_User> -c`
-`<Agent_Base_Directory>/agent_inst/bin/omcli start agent`
+    **`#!/bin/sh`**
+    **`su - <Agent_Install_User> -c`**
+    **`<Agent_Base_Directory>/agent_inst/bin/omcli start agent`**
  
 For example, if the gateway is installed under the /oracle/omc directory and gateway installation owner is oracle, then the content of the shell script should be as follows:
  
-*'#!/bin/sh'*
+*#!/bin/sh*
 *su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”*
 
 4. Save the script file as startomcagent.sh.
