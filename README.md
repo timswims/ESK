@@ -504,7 +504,7 @@ If you don't have an Oracle Cloud Account, sign up for one using this Registerin
 
 10.	Following this completion your cloud account will start to be provisioned and will take a few minutes to be completed.
 
-**Note:** *Oracle will not charge you during the free trial and you will not be charged after the free tiral without your approval.*
+**Note:** *Oracle will not charge you during the free trial and you will not be charged after the free trial without your approval.*
 
 #### Access the Oracle Management Cloud Console
 
