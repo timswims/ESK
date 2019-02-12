@@ -543,7 +543,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
 1. On the Oracle Management Cloud home page, click the **Global Navigation Menu** on the top-left corner and navigate to **Administration > Agents.**
    
-2. On the **Agents – Oracle Management Cloud** page, click the **Download** tab. The Agent Software Download page is displayed.
+2. On the **Agents – Oracle Management Cloud** page, click the hamburger menu button on the top right and then click the **Download Agents** tab. The Agent Software Download page is displayed.
    
 3. Select Gateway from the **Agent Type** drop-down list, and select one of the choices (such as Linux (64-bit)) that matches the type of O/S on the host where you will be installing the gateway from the **Operating System** drop-down list. The gateway software link for the gateway you’ve selected is displayed.
 
@@ -551,9 +551,11 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
     <img src="./Tutorial_Images/general/OMC_Download_Page.png" />
 </p>
    
-4. A list of link would show up under Download. Click the link on the gateway file that you wish to download.
+4. A list of links would show up under Download. Click the link on the gateway file that you wish to download.
+
+    **Note:** *Please also make a note of the values of TENANT_NAME and OMC_URL, which are shown at the bottom of the page. You will need this information for a later step when you set up the gateway.rsp file.*
    
-5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux / Unix, use the following steps:
+5. If you download the Gateway file to your computer instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux / Unix, use the following steps:
 	
 	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the below command (You will use your OCI Public IP Address instead of 129.***.***.**):
 		
@@ -575,7 +577,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 		
         **`exit`**
 
-	*	From Local Machine Session - We will now copy our cloud agent file over to our opc session:
+	*	From Local Machine Session - We will now copy our gateway agent file over to our opc session:
   
 		a.	Locate the file path of the 'gateway_linux.x64_1.32.0.zip
         
@@ -593,20 +595,18 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 		
          **`ls`**
 
-	*	From OPC Terminal Inside The OMC Directory Session - Unzip the cloudagent file by running the below command:
+	*	From OPC Terminal Inside The OMC Directory Session - Unzip the gateway agent file by running the below command:
 		
          **`unzip gateway_linux.x64_1.32.0.zip`**
-
-6. Please also make a note of the values of TENANT_ID and UPLOAD_ROOT, which are shown as the bottom of the page. You will need these information for a later step when you set up the agent.rsp file.
    
 ### 2. Create a Registration Key
 
-A registration key is issued for your identity domain, and it’s used when you deploy gateways and agents.
+A registration key is issued for your identity domain, and it’s used when you deploy gateways and other agents.
 
 1. On the Oracle Management Cloud home page, click the **Global Navigation Menu** on the top-left
 corner and navigate to **Administration > Agents.**
 
-2. On the **Agents – Oracle Management Cloud** page, click the **Registration Keys** tab. The Registration Keys page opens.
+2. On the **Agents – Oracle Management Cloud** page, click the hamburger menu button on the top right and then click the **Manage Registration Keys** tab. The Registration Keys page opens.
    
 3. Enter the required details to create a new registration key:
    
@@ -622,30 +622,31 @@ corner and navigate to **Administration > Agents.**
 
 ### 3. Edit the Response File
 
-The *AgentInstall.sh* script is used to carry out the actual install of the OMC Gateway. The script requires a set of parameters that are specific to your environment. These parameters are specified in the response file *agent.rsp.*
+The *AgentInstall.sh* script is used to carry out the actual install of the OMC Gateway. The script requires a set of parameters that are specific to your environment. These parameters are specified in the response file *gateway.rsp.*
 
-1. On your Linux / UNIX or Microsoft Windows host, logged in as the owner of the Oracle software navigate to your staging directory. Edit the *agent.rsp* file using any standard text editor. Add your values for the **mandatory parameters** in the *agent.rsp* file. Here are example values (make sure to replace these with the correct values for your environment):
+1. On your Linux / UNIX or Microsoft Windows host, logged in as the owner of the Oracle software navigate to your staging directory. Edit the *gateway.rsp* file using any standard text editor. Add your values for the **mandatory parameters** in the *gateway.rsp* file. Here are example values (make sure to replace the examples with the correct values for your environment):
    
-	* *TENANT_ID=example-tenant*
+	* *TENANT_NAME=example-tenant*
   
-	Note: this value must be exactly as shown in the UI, the format is instance name-domain name.
+	**Note:** this value must be exactly as shown in the UI, the format is instance name-domain name.
 
-	* *UPLOAD_ROOT=https://example-tenant.management.us2.oraclecloud.com/*  
 	* *AGENT_REGISTRATION_KEY=xxxxxxx-yyyyyyyyyyyyyyyyy*
   
-	* *AGENT_BASE_DIRECTORY=/oracle/GatewayAgent*
+	* *AGENT_BASE_DIRECTORY=/home/opc/agent* - You can use this exact example since you created an agent directory in the earlier steps.
+
+    * *OMC_URL=https://example-tenant.management.us2.oraclecloud.com/*  
   
 	(or for example when installing on Microsoft Windows)
 
-	*AGENT_BASE_DIRECTORY=C:/Oracle/GatewayAgent*
+	*AGENT_BASE_DIRECTORY=C:\Oracle\GatewayAgent*
 
-	The AGENT_BASE_DIRECTORY is where your agent executables and other run-time files will reside. Create a directory that is owned by the user ID of the Oracle software. It is best to have a standard location that is common across all your hosts, so that the agent.rsp file is standardized and you just need to set up the file once.
+	The AGENT_BASE_DIRECTORY is where your agent executables and other run-time files will reside.  It is best to have a standard location that is common across all your hosts, so that the gateway.rsp file is standardized and you just need to set up the file once. This is why you created the agent directory in the earlier steps.
 
     <p align="center">
     <img src="./Tutorial_Images/general/ezgif.com-crop.gif" />
   </p>
 
-2. For security reasons, if you are using a **proxy server** (a dedicated host or system that acts as an intermediary between your host and Oracle Management Cloud) you must define its parameters next. In this case, the proxy server was configured to use authentication, so it requires a user name and password. Edit the following parameters in the *agent.rsp* file:
+2. For security reasons, if you are using a **proxy server** (a dedicated host or system that acts as an intermediary between your host and Oracle Management Cloud) you must define its parameters next. In this case, the proxy server was configured to use authentication, so it requires a user name and password. Edit the following parameters in the *gateway.rsp* file. (Be sure to replace the examples with the proper credentials):
    
 	* *OMC_PROXYHOST=www-proxy.example.com* 
   
@@ -730,7 +731,7 @@ After installing the gateway, you must verify the installation.
 
 2. Click the **Gateways** tab.
    
-3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry and match the specified registration key value with the registration key that you had used when deploying the gateway.
+3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry to view details and match the specified registration key value with the registration key that you had used when deploying the gateway.
 
 <p align="center">
     <img src="./Tutorial_Images/general/OMC_Gateway_Page.png" />
@@ -744,9 +745,9 @@ After installing the gateway, you must verify the installation.
 
 5. If installing on a Microsoft Windows host, run the following *omcli* commands to verify that the gateway was successfully deployed:
    
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli.bat status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
+    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
   
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli.bat status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
 
 The following screenshot shows one of the verification steps as it would appear on a Linux host:
 
