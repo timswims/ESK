@@ -434,7 +434,7 @@ There are 5 steps for deploying OMC Gateway.
 
 What Do You Need?
 
-* A valid Oracle Cloud account, an Oracle Management Cloud instance and "OMC Administrator" role credentials. See [Access Oracle Management Cloud](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-838A6676-0224-4CF1-8BC8-8327887D24B7) in *Getting Started with Oracle Management Cloud*. You should already have these if you followed a prior tutorial.
+* A valid Oracle Cloud account, an Oracle Management Cloud instance and "OMC Administrator" role credentials. See [Access Oracle Management Cloud](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-838A6676-0224-4CF1-8BC8-8327887D24B7) in *Getting Started with Oracle Management Cloud*. You may already have these if you followed sections 1-4 or followed another prior tutorial.
 
 * A host: the OMC Gateway needs to be installed on a host where it will run. For production deployment, one or more dedicated physical or VM hosts is recommended. For trial, it is possible to use a host where the entities you want to monitor are installed. Linux, Windows, Solaris SPARC and AIX based hosts are supported. See the “Supported Operating Systems” section in [Common Prerequisites](https://docs.oracle.com/en/cloud/paas/management-cloud/emaig/generic-prerequisites-deploying-oracle-management-cloud-agents.html).
   
