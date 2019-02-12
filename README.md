@@ -454,9 +454,9 @@ If you don't have an Oracle Cloud Account, sign up for one using this Registerin
 
 2.	At the top of the page click the try for free button. 
 
-3.	Here is where you will put in the information for your trial account
+3.	Here is where you will put in the information for your trial account.
 
-4.	Fill out the information for the Account Details section (Section 1)
+4.	Fill out the information for the Account Details section.
 
 	* Account Type
   
@@ -484,7 +484,7 @@ If you don't have an Oracle Cloud Account, sign up for one using this Registerin
     <img src="./Tutorial_Images/general/OCI_Section_1.png" />
 </p>
 
-5.	For the Verification Code Section (Section 2), fill out the information for this as well.
+5.	For the Verification Code Section, fill out the information for this as well.
 
 	* Country/Region Calling Code
   
@@ -498,9 +498,9 @@ If you don't have an Oracle Cloud Account, sign up for one using this Registerin
 
 7.	Once you receive the code, type that code into the Verification Code Field and click the verify button. It may take a minute or so for the verification button to work.
 
-8.	In the Credit Card Details Section (Section 3) click on the Add Payment Button and provide information from a credit card. Debit cards can be used as well. You will be asked to verify your address and provide the card information in separate windows
+8.	In the Credit Card Details Section click on the Add Payment Button and provide information from a credit card. Debit cards can be used as well. You will be asked to verify your address and provide the card information in separate windows.
 
-9.	In the Terms & Conditions section (Section 4), check the complete box and click the Complete button.
+9.	In the Terms & Conditions section, check the complete box and click the Complete button.
 
 10.	Following this completion your cloud account will start to be provisioned and will take a few minutes to be completed.
 
@@ -520,7 +520,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
     <img src="./Tutorial_Images/general/Github_SignIn.png" />
     </p>
 
-    Enter your user id and password.
+    Enter your user ID and password.
 
     On the other hand, if you have a Traditional Cloud Account (most likely because it was provisioned prior to April 2018), select “Traditional Cloud Account” as account type. Select “US Commercial 2 (us2)” for data center if your account was provisioned in the United States.
   
@@ -553,47 +553,47 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
    
 4. A list of link would show up under Download. Click the link on the gateway file that you wish to download.
    
-5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux/Unixgit , use the following steps:
+5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux / Unix, use the following steps:
 	
-	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the      below command (You will use your OCI Public IP Address instead of 129.***.***.**):
+	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the below command (You will use your OCI Public IP Address instead of 129.***.***.**):
 		
         **`ssh opc@129.***.***.**`**
 
-	*	From OPC Terminal Session type pwd to see where you are currently at in your         directory.  You should see the following:
+	*	From OPC Terminal Session - Type pwd to see where you are currently at in your       directory. You should see the following:
 
          **`/home/opc`**
 
-	*	From OPC Terminal Session  Make a directory called agent.  Run the following command in your terminal:
+	*	From OPC Terminal Session - Make a directory called agent. Run the following command in your terminal:
 		
         **`mkdir agent`**
 
-	*	From OPC Terminal Session Make a directory called omc.  Run the following command in your terminal:
+	*	From OPC Terminal Session - Make a directory called omc.  Run the following command in your terminal:
 		
         **`mkdir omc`**
 
-	*	From OPC Terminal Session type the following command:
+	*	From OPC Terminal Session - Type the following command:
 		
         **`exit`**
 
-	*	From Local Machine Session we will now copy our cloud agent file over to our OPC Session:
+	*	From Local Machine Session - We will now copy our cloud agent file over to our opc session:
   
 		a.	Locate the file path of the 'gateway_linux.x64_1.32.0.zip
         
 
-		b.	run the following command (File path will depend on where you saved the agent and IP address will be different)
+		b.	Run the following command (File path will depend on where you saved the agent and IP address will be different):
 
         **`ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`**
 
-	*	From Local Machine Session ssh back into your OCI    account (Your IP Address will be different than shown below:
+	*	From Local Machine Session - SSH back into your OCI account (Your IP Address will be different than shown below):
 
         **`ssh opc@129.***.***.**`**
          
 
-	*	From your OPC terminal inside the OMC directory session type the following command to see the contents of your directory.  You should now see a .zip called gateway_linux.x64_1.32.0.zip:
+	*	From OPC Terminal Inside The OMC Directory Session - Type the following command to see the contents of your directory.  You should now see a .zip called gateway_linux.x64_1.32.0.zip:
 		
          **`ls`**
 
-	*	From your OPC terminal inside the omc directory unzip the cloudagent file by running the below command
+	*	From OPC Terminal Inside The OMC Directory Session - Unzip the cloudagent file by running the below command:
 		
          **`unzip gateway_linux.x64_1.32.0.zip`**
 
@@ -608,7 +608,7 @@ corner and navigate to **Administration > Agents.**
 
 2. On the **Agents – Oracle Management Cloud** page, click the **Registration Keys** tab. The Registration Keys page opens.
    
-3. Enter the required details to create a new Registration Key:
+3. Enter the required details to create a new registration key:
    
 	* In the **Name** field, specify a name to identify the registration key.
  
@@ -624,11 +624,11 @@ corner and navigate to **Administration > Agents.**
 
 The *AgentInstall.sh* script is used to carry out the actual install of the OMC Gateway. The script requires a set of parameters that are specific to your environment. These parameters are specified in the response file *agent.rsp.*
 
-1. On your Linux / UNIX or Microsoft Windows host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Edit the *agent.rsp* file using any standard text editor. Add your values for the **mandatory parameters** in the *agent.rsp* file. Here are example values (make sure to replace these with the correct values for your environment):
+1. On your Linux / UNIX or Microsoft Windows host, logged in as the owner of the Oracle software navigate to your staging directory. Edit the *agent.rsp* file using any standard text editor. Add your values for the **mandatory parameters** in the *agent.rsp* file. Here are example values (make sure to replace these with the correct values for your environment):
    
 	* *TENANT_ID=example-tenant*
   
-	Note: this value must be exactly as shown in the UI, the format is instance name-domain name
+	Note: this value must be exactly as shown in the UI, the format is instance name-domain name.
 
 	* *UPLOAD_ROOT=https://example-tenant.management.us2.oraclecloud.com/*  
 	* *AGENT_REGISTRATION_KEY=xxxxxxx-yyyyyyyyyyyyyyyyy*
@@ -637,9 +637,9 @@ The *AgentInstall.sh* script is used to carry out the actual install of the OMC 
   
 	(or for example when installing on Microsoft Windows)
 
-	*AGENT_BASE_DIRECTORY=C:\Oracle\GatewayAgent*
+	*AGENT_BASE_DIRECTORY=C:/Oracle/GatewayAgent*
 
-	The AGENT_BASE_DIRECTORY is where your agent executables and other run-time files will reside. Create a directory that is owned by the user id of the Oracle software (here, *oracle*). It is best to have a standard location that is common across all your hosts, so that the agent.rsp file is standardized and you just need to set up the file once.
+	The AGENT_BASE_DIRECTORY is where your agent executables and other run-time files will reside. Create a directory that is owned by the user ID of the Oracle software. It is best to have a standard location that is common across all your hosts, so that the agent.rsp file is standardized and you just need to set up the file once.
 
     <p align="center">
     <img src="./Tutorial_Images/general/ezgif.com-crop.gif" />
@@ -658,7 +658,7 @@ Save and close the response file.
 ### 4a. Install the Gateway on Linux / UNIX
 You install a gateway by running the AgentInstall.sh script from the command line. By default, the gateway install script picks up all its required parameters from the response file you just edited in the same directory.
 
-1. On your Linux / UNIX host, logged in as the owner of the Oracle software (here, oracle) navigate to your staging directory. Run the installer script using this command:
+1. On your Linux / UNIX host, logged in as the owner of the Oracle software navigate to your staging directory. Run the installer script using this command:
    
     **`./AgentInstall.sh`** 
  
