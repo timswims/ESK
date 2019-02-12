@@ -496,13 +496,15 @@ If you don't have an Oracle Cloud Account, sign up for one using this Registerin
 
 6.	Click on the Request Code button to receive the verification code via a text message to the mobile number that you provided when you filled out the Mobile Number Field.
 
-7.	Once you receive the code, type that code into Verification code field and click the verify button. It may take a minute or so for the verification button to work.
+7.	Once you receive the code, type that code into the Verification Code Field and click the verify button. It may take a minute or so for the verification button to work.
 
 8.	In the Credit Card Details Section (Section 3) click on the Add Payment Button and provide information from a credit card. Debit cards can be used as well. You will be asked to verify your address and provide the card information in separate windows
 
-9.	In the Terms & Conditions section (Section 4), check the complete box and click the complete box.
+9.	In the Terms & Conditions section (Section 4), check the complete box and click the Complete button.
 
 10.	Following this completion your cloud account will start to be provisioned and will take a few minutes to be completed.
+
+**Note:** *Oracle will not charge you during the free trial and you will not be charged after the free tiral without your approval.*
 
 #### Access the Oracle Management Cloud Console
 
