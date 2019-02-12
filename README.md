@@ -272,7 +272,7 @@ You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some 
 </details>
 
 ## 4. Upload Your Own Logs and Evaluate
-Now that you were able to upload some sample logs lets look at what your own logs look like on your enviornment.
+Now that you were able to upload some sample logs lets look at what your own logs look like inside OMC.
 
 <details>
 <summary><b>Deploying uploadMyLog</b></summary>
@@ -384,7 +384,7 @@ To view the records from an upload, follow these steps.
 2. From the Uploads page, click the **navigation icon** ![alt text][hamburger], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
 3. From the Log Explorer page, you can view the alert log records from the upload that you selected.
 
-![log-alerts]
+![][log-alerts]
    
 Some of the information shown on the page includes
 
