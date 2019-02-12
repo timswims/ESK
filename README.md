@@ -615,10 +615,6 @@ corner and navigate to **Administration > Agents.**
 	* In the **Registration Limit** field, enter a number that indicates the maximum number of gateways, data collectors, and agents that can be associated with the registration key. If you are not sure, just put 10,000, which should be enough for a trial.
   
 	* Click **Create New Key.** A new registration key will then be created. Make a note of this registration “Key Value”, it will be used by the AgentInstall.sh script at the time of installation.
-  
-  <p align="center">
-    <img src="./Tutorial_Images/general/OMC_Key_Page.png" />
-  </p>
 
 ### 3. Edit the Response File
 
@@ -734,14 +730,14 @@ After installing the gateway, you must verify the installation.
 3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry to view details and match the specified registration key value with the registration key that you had used when deploying the gateway.
 
 <p align="center">
-    <img src="./Tutorial_Images/general/replacementPicDetails.png" />
+    <img src="./Tutorial_Images/general/replacementPicDetails2.png" />
 </p>
    
 4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
 
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same. Be sure to put ./ in front of omcli in order for the command to run correctly.
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same. If you're inside the bin directory, be sure to put ./ in front of omcli in order for the command to run correctly.
 
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud. Be sure to put ./ in front of omcli in order for the command to run correctly.
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud. If you're inside the bin directory, be sure to put ./ in front of omcli in order for the command to run correctly.
 
 5. If installing on a Microsoft Windows host, run the following *omcli* commands to verify that the gateway was successfully deployed:
    
