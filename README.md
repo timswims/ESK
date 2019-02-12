@@ -444,7 +444,7 @@ What Do You Need?
 
 ### 1. Download the Oracle Management Cloud Gateway Software
 
-The Oracle Management Cloud gateway software, including a gateway installation script and an editable response file, is provided in a zip file that you can download from your Oracle Management Cloud console. The zip file is platform specific.
+The Oracle Management Cloud gateway software, including a gateway installation script and an editable response file, is provided in a zip file that you can download from your Oracle Management Cloud console.
 
 #### Registering For a Cloud Account
 
@@ -548,7 +548,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 3. Select Gateway from the **Agent Type** drop-down list, and select one of the choices (such as Linux (64-bit)) that matches the type of O/S on the host where you will be installing the gateway from the **Operating System** drop-down list. The gateway software link for the gateway you’ve selected is displayed.
 
 <p align="center">
-    <img src="./Tutorial_Images/general/OMC_Download_Page.png" />
+    <img src="./Tutorial_Images/general/replacementPicDetails.png" />
 </p>
    
 4. A list of links would show up under Download. Click the link on the gateway file that you wish to download.
@@ -734,7 +734,7 @@ After installing the gateway, you must verify the installation.
 3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry to view details and match the specified registration key value with the registration key that you had used when deploying the gateway.
 
 <p align="center">
-    <img src="./Tutorial_Images/general/OMC_Gateway_Page.png" />
+    <img src="./Tutorial_Images/general/replacementPicDetails.png" />
 </p>
    
 4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
