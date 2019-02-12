@@ -514,7 +514,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
 2. Your Sign In procedure varies depending on the type of account that your tenant is configured.
 
-    In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services.
+    In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services or Next.
 
     <p align="center">
     <img src="./Tutorial_Images/general/Github_SignIn.png" />
@@ -528,12 +528,12 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
   
     * Enter your user ID and password.
 
-3. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo (highlighted in red) toward the top of the page to open up the navigation menu to the left.
+3. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo toward the top of the page to open up the navigation menu to the left.
 
 4. On the navigation menu, click on Services to expand the list of services, and click Management Cloud.
 
   
-5. This takes you to the Oracle Management Cloud home page, which looks like the following. You will be using the **Global Navigation Menu** to the left to carry out the remaining setup. If the menu is hidden, click the link next to Oracle logo (highlighted in red) to bring up the menu.
+5. This gives you a link that takes you to the Oracle Management Cloud home page, which looks like the following. You will be using the **Global Navigation Menu** to the left to carry out the remaining setup. If the menu is hidden, click the link next to Oracle logo (highlighted in red) to bring up the menu.
 
 <p align="center">
     <img src="./Tutorial_Images/general/OMC_Home_Screen.png" />
@@ -582,9 +582,9 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 		a.	Locate the file path of the 'gateway_linux.x64_1.32.0.zip
         
 
-		b.	Run the following command (File path will depend on where you saved the agent and IP address will be different):
+		b.	Run the following command (File path will depend on where you saved the agent and IP address will be different. File name may be slightly different as well.):
 
-        **`ssh opc@scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`**
+        **`scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`**
 
 	*	From Local Machine Session - SSH back into your OCI account (Your IP Address will be different than shown below):
 
@@ -739,17 +739,15 @@ After installing the gateway, you must verify the installation.
    
 4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
 
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same. Be sure to put ./ in front of omcli in order for the command to run correctly.
 
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
+    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud. Be sure to put ./ in front of omcli in order for the command to run correctly.
 
 5. If installing on a Microsoft Windows host, run the following *omcli* commands to verify that the gateway was successfully deployed:
    
     *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
   
     *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
-
-The following screenshot shows one of the verification steps as it would appear on a Linux host:
 
 You are now ready to perform additional installation of agents and the optional Enterprise Manager Data Collector for Oracle Management Cloud.
 
