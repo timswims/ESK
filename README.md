@@ -551,7 +551,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
    
 4. A list of link would show up under Download. Click the link on the gateway file that you wish to download.
    
-5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux/Unix, use the following steps:
+5. If you download the Gateway file to your PC instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux/Unixgit , use the following steps:
 	
 	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the      below command (You will use your OCI Public IP Address instead of 129.***.***.**):
 		
@@ -638,6 +638,10 @@ The *AgentInstall.sh* script is used to carry out the actual install of the OMC 
 	*AGENT_BASE_DIRECTORY=C:\Oracle\GatewayAgent*
 
 	The AGENT_BASE_DIRECTORY is where your agent executables and other run-time files will reside. Create a directory that is owned by the user id of the Oracle software (here, *oracle*). It is best to have a standard location that is common across all your hosts, so that the agent.rsp file is standardized and you just need to set up the file once.
+
+    <p align="center">
+    <img src="./Tutorial_Images/general/ezgif.com-crop.gif" />
+  </p>
 
 2. For security reasons, if you are using a **proxy server** (a dedicated host or system that acts as an intermediary between your host and Oracle Management Cloud) you must define its parameters next. In this case, the proxy server was configured to use authentication, so it requires a user name and password. Edit the following parameters in the *agent.rsp* file:
    
