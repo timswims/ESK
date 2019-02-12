@@ -448,7 +448,7 @@ The Oracle Management Cloud gateway software, including a gateway installation s
 
 #### Registering For a Cloud Account
 
-If you don't have an Oracle Cloud Account, sign up for one using the Registering For a Cloud Account section below. If you already have a cloud account, then skip the Registering For a Cloud Account section section
+If you don't have an Oracle Cloud Account, sign up for one using this Registering For a Cloud Account section. If you already have a cloud account, then skip the Registering For a Cloud Account section.
 
 1.	Go to the Oracle Cloud Infrastructure Page: https://cloud.oracle.com/home
 
