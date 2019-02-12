@@ -524,9 +524,9 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
     On the other hand, if you have a Traditional Cloud Account (most likely because it was provisioned prior to April 2018), select “Traditional Cloud Account” as account type. Select “US Commercial 2 (us2)” for data center if your account was provisioned in the United States.
   
-  * Supply the name of your identity domain.
+        * Supply the name of your identity domain.
   
-  * Enter your user id and password.
+        * Enter your user ID and password.
 
 3. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo (highlighted in red) toward the top of the page to open up the navigation menu to the left.
 
