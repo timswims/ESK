@@ -76,7 +76,6 @@ After Oracle Management Cloud is provisioned, you’ll receive a notification on
 
 To meet the pre-requisites, you must have signed up for an Oracle Cloud account and created an Oracle Management Cloud instance. If you don't already have an Oracle Management Cloud instance, create one. For more information, see **Creating an Oracle Management Cloud Instance** below.
 
-
 <details><summary><b>Creating an Oracle Management Cloud Instance</b></summary>
 
 #### Access the My Services Console
@@ -114,7 +113,7 @@ As a Cloud Account Administrator, you can add users and assign Oracle Management
     6. Click **Finish** after you’ve assigned roles.
    </details>
 
-
+<br/>
 Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle Management Cloud instance tile should be displayed on the My Services dashboard.
 
 1. On your Management Cloud tile, click the **Action Menu** ![hamburger] then click **Open Service Console**. You are now viewing the Oracle Management Cloud instances page.
