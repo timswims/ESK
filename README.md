@@ -42,10 +42,6 @@ Oracle Management Cloud is a suite of next-generation integrated monitoring, man
       - [Verify your host connectivity to Oracle Management Cloud](#verify-your-host-connectivity-to-oracle-management-cloud)
   - [2. Prepare to Upload Log Data](#2-prepare-to-upload-log-data)
   - [3. Upload Sample Logs and Evaluate](#3-upload-sample-logs-and-evaluate)
-      - [Verifying the Status of the Uploads](#verifying-the-status-of-the-uploads)
-      - [Checking the Outcome of the Cluster Operation](#checking-the-outcome-of-the-cluster-operation)
-      - [Examining Potential Issues](#examining-potential-issues)
-      - [Correlating Logs](#correlating-logs)
 
 ## Before You Begin
 
