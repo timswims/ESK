@@ -25,11 +25,11 @@
 
 
 
-<h1> Analyzing Logs Using Oracle Management Cloud – Log Analytics </h1>
+<h1> Analyzing Logs Using Oracle Log Analytics Cloud Service, A Service In The Oracle Management Cloud Suite </h1>
 
 **Oracle Management Cloud – Log Analytics**
 
-Oracle Management Cloud is a suite of monitoring and analytics next gen.. integrated services including Oracle Log Analytics.  Oracle Log Analytics monitors, aggregates, indexes, and analyzes all log data from your applications and infrastructure enabling you to correlate this data and find problems faster.
+Oracle Management Cloud is a suite of next-generation integrated monitoring, management, and analytics cloud services that leverage machine learning and big data techniques against the full breadth of the operational data set. Oracle Log Analytics Cloud Service is one of those services in the suite. It monitors, aggregates, indexes, and analyzes all log data from your applications and infrastructure – enabling users to search, explore, and correlate this data to troubleshoot problems faster, derive operational insight, and make better decisions. 
 
 ## Table of Contents
 
@@ -51,18 +51,15 @@ Oracle Management Cloud is a suite of monitoring and analytics next gen.. integr
 
 #### Background
 
-This tutorial will show you have Oracle Log Analytics can quickly identify and find anomalies within your IT environment.  This is done using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use some sample logs so that you can quickly see how Log Analytics works without the extra steps of installing an agent for metric and log collection.  
-Using the provided sample log data, you will quickly explore the basic functionalities of Oracle Log Analytics.  To accomplish this, you first confirm a few items below and collect some connection information from Log Analytics. The steps will be discussed in the next section below.
+This tutorial is designed to give you a first-hand view of what Oracle Log Analytics can do. You will see how to quickly identify issues and find anomalies within your IT environment.  This is done using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use sample logs so you can quickly see how Log Analytics works without the extra steps of installing agents and a gateway for realtime metric and log collection normally carried out for production use.  
+Using the provided sample log data, you will be able to quickly explore the basic functionalities of Oracle Log Analytics.
 
 
 #### What Do You Need?
 
-- An Oracle Cloud account: if you do not already have one, sign up for a free trial  and see **Creating an Oracle Cloud Trial** below.
-- An Oracle Management Cloud instance: If you don't already have an Oracle Management Cloud instance, create one. For more information, see **Creating an Oracle Management Cloud Instance** below.
+- An Oracle Cloud account: if you do not already have one, sign up for a free trial  and see **Creating an Oracle Cloud Trial**.
 
-<details><summary><b>Creating an Oracle Cloud Trial</b></summary>
-
-Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. When you sign up for Oracle Cloud, your account is created soon after you sign up and you receive a welcome email.
+Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. When you sign up for the Oracle Cloud trial, your account is created soon after you sign up and you will receive a welcome email.
 
 The welcome email has the following information:
 
@@ -72,7 +69,7 @@ The welcome email has the following information:
 
 Using the information in the welcome email you can access My Services and explore the Guided Journey, while your services are being provisioned.
 
-After Oracle Management Cloud is provisioned, you’ll receive a notification on the My Services dashboard. Please allow roughly 5 hours after receiving the email for your entire cloud environment to be provisioned.
+After Oracle Cloud is provisioned, you’ll receive a notification on the My Services dashboard. Please allow up to 5 hours after receiving the email for your entire cloud environment to be provisioned.
 </details>
 
 <details><summary><b>Creating an Oracle Management Cloud Instance</b></summary>
