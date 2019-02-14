@@ -76,6 +76,7 @@ After Oracle Management Cloud is provisioned, you’ll receive a notification on
 </details>
 
 <details><summary><b>Creating an Oracle Management Cloud Instance</b></summary>
+
 #### Access the My Services Console
   1. Click **Get Started with Oracle Cloud** in your welcome email.
    ![welcome-email]
