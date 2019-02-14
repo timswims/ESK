@@ -321,7 +321,7 @@ Drilling down on a log cluster allows you to see the log record(s) including the
 Log Analytics allows you to quickly correlate logs from different sources (e.g. database logs and syslog) based on time to determine whether there is a correlation between events captured in log records. Let’s query the log records for entities demo_db_instance and demo_host 30 seconds before 5:23:28 PM (UTC-8:00) and 30 seconds after that by following these steps:
 
 1. Click ![gear] at the bottom of the **Original Log Content** field, and then select **Advanced Log Fitler Options...**.
-2. From the Advanced Log Filter Options pop-up window, enter 30 (seconds) for **Time Range - Before**, 30 (seconds) for **Time Range – After**, and click **OK**.
+2. From the Advanced Log Filter Options pop-up window, enter 30 (seconds) for **Time Range - Before**, 30 (seconds) for **Time Range – After**, and click **Search**.
 3. In the **Global Context** ![global-context] bar near the top, enter `demo_host` next to `demo_db_instance`, click in the Query bar to clear any existing filter, and click **Run**.
 4. The above query retrieves the log records uploaded for entities `demo_db_instance` and `demo_host` for the period of 5:23:28 PM to 5:24:28 PM on August 9. Examine the 31 records in the two-page output to see the sequence of the events that were captured in the logs in the one-minute period, and which of the events may have had an effect on other events.
 
