@@ -4,6 +4,15 @@
 [gear]: ./Tutorial_Images/general/gear.png
 [global-context]: ./Tutorial_Images/general/global_context.png
 
+[background_root]: ./Tutorial_Images/before_you_begin/
+[welcome-email]: ./Tutorial_Images/before_you_begin/welcome-email.png
+[mys-db]: ./Tutorial_Images/before_you_begin/mys-db.png
+[create-instance]: ./Tutorial_Images/before_you_begin/createinstance_omc.png
+[create-instance-details]: ./Tutorial_Images/before_you_begin/createinstance_details.png
+[create-instance-conf]: ./Tutorial_Images/before_you_begin/createinstance_confirmation.png
+[add-users]: ./Tutorial_Images/before_you_begin/addusers.png
+
+
 [uploads-1]: ./Tutorial_Images/log_analytics/uploads_1.png
 [uploads-2]: ./Tutorial_Images/log_analytics/uploads_2.png
 [uploads-3]: ./Tutorial_Images/log_analytics/uploads_3.png
@@ -16,11 +25,11 @@
 
 
 
-<h1> Analyzing Logs Using Oracle Log Analytics </h1>
+<h1> Analyzing Logs Using Oracle Management Cloud – Log Analytics </h1>
 
-**OMC Log Analytics**
+**Oracle Management Cloud – Log Analytics**
 
-An application that allows you to condense logs to find issues faster.
+Oracle Management Cloud is a suite of monitoring and analytics next gen.. integrated services including Oracle Log Analytics.  Oracle Log Analytics monitors, aggregates, indexes, and analyzes all log data from your applications and infrastructure enabling you to correlate this data and find problems faster.
 
 ## Table of Contents
 
@@ -37,28 +46,75 @@ An application that allows you to condense logs to find issues faster.
       - [Checking the Outcome of the Cluster Operation](#checking-the-outcome-of-the-cluster-operation)
       - [Examining Potential Issues](#examining-potential-issues)
       - [Correlating Logs](#correlating-logs)
-  - [4. Upload Your Own Logs and Evaluate](#4-upload-your-own-logs-and-evaluate)
-    - [Deploying uploadMyLog](#deploying-uploadMyLog)
-    - [Using uploadMyLog](#Using-uploadMyLog)
-    - [Viewing Uploaded Log Records](#Viewing-Uploaded-Log-Records)
-  - [5. Install a Gateway Agent](#5-install-a-gateway-agent)
-    - [Deploy Oracle Management Cloud Gateway](#Deploy-Oracle-Management-Cloud-Gateway)
 
 ## Before You Begin
 
-This tutorial helps you get started with a kit for evaluating Oracle Log Analytics. This kit includes a set of sample log files and it guides you through uploading a set of your own log files. You can then explore Oracle Management Cloud Log Analytics functionality such as detecting anomalies in logs and correlating logs data. The kit also guides you through the installation of a Gateway Agent to help facilitate on-going data uploads.
-
 #### Background
 
-Oracle Log Analytics monitors, aggregates, indexes, and analyzes all log data from your applications and infrastructure enabling you to correlate this data and find problems faster. Using sample logs data, you can immediately explore the basic functionalities of Oracle Log Analytics. You can then collect logs from your own environment and explore the data in more depth. Sample log files and other scripts are provided in the form of a zip file.
+This tutorial will show you have Oracle Log Analytics can quickly identify and find anomalies within your IT environment.  This is done using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use some sample logs so that you can quickly see how Log Analytics works without the extra steps of installing an agent for metric and log collection.  
+Using the provided sample log data, you will quickly explore the basic functionalities of Oracle Log Analytics.  To accomplish this, you first confirm a few items below and collect some connection information from Log Analytics. The steps will be discussed in the next section below.
+
 
 #### What Do You Need?
 
-- An Oracle Cloud account: if you do not already have one, sign up for a free triall [here](https://cloud.oracle.com/home). For more information, see [How Do I Access Oracle Management Cloud?](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-838A6676-0224-4CF1-8BC8-8327887D24B7)
-- An Oracle Management Cloud instance: If you don't already have an Oracle Management Cloud instance, create one. For more information, see [Creating an Oracle Management Cloud Instance](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-C15E9F94-78CD-4868-A9F8-DCF50D267A2E).
-- Appropriate license: Configure your license edition Oracle Management Cloud – Log Analytics Edition. For more information, see [How Do I License Oracle Management Cloud?](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/oracle-management-cloud-license-information.html#GUID-A2F5635B-D7DE-4277-B707-035A96F19B26)
-- A Unix host with connectivity to your Oracle Management Cloud instance and with a version of cURL that supports TLS 1.2 protocol.
-- For the installation of the Gateway Agent, the following Operating Systems are supported: Oracle Linux 5.x, 6.x, and 7.x (64-bit), Red Hat Enterprise Linux 5.x, 6.x, and 7.x (64-bit), SUSE Linux Enteprise Server 11 (x86_64), AIX 6.1 or later (minimum level 6100-07), AIX 7.1 or later (minimum level 7100-03), Solaris 10.x and 11.x, Microsoft Windows versions 2008 Enterprise R2 (Intel 64-bit, Developer) or later, Microsoft Windows Server 2012 Standard (Intel 64-bit), Microsoft Windows 2012 Standard R2 (Intel 64-bit, Developer) or later.
+- An Oracle Cloud account: if you do not already have one, sign up for a free trial  and see **Creating an Oracle Cloud Trial** below.
+- An Oracle Management Cloud instance: If you don't already have an Oracle Management Cloud instance, create one. For more information, see **Creating an Oracle Management Cloud Instance** below.
+
+<details><summary><b>Creating an Oracle Cloud Trial</b></summary>
+
+Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. When you sign up for Oracle Cloud, your account is created soon after you sign up and you receive a welcome email.
+
+The welcome email has the following information:
+
+* Your user name and temporary password
+
+* The name of your Cloud Account
+
+Using the information in the welcome email you can access My Services and explore the Guided Journey, while your services are being provisioned.
+
+After Oracle Management Cloud is provisioned, you’ll receive a notification on the My Services dashboard. Please allow roughly 5 hours after receiving the email for your entire cloud environment to be provisioned.
+</details>
+
+<details><summary><b>Creating an Oracle Management Cloud Instance</b></summary>
+#### Access the My Services Console
+  1. Click **Get Started with Oracle Cloud** in your welcome email.
+   ![welcome-email]
+  2. Enter the username and password and click **Sign in**.
+   
+   ![mys-db]
+
+#### Create an Oracle Management Cloud Instance
+   1. On the **My Services** dashboard, open the menu in the upper left corner. Scroll down to find **Management Cloud** and click the link to go into the Oracle Management Cloud services console.
+   2. Click the **Create Instance** button.
+   ![create-instance]
+   3. Provide basic service instance information on the Create New Instance page. In the Region field, select the Data Region (a geographical region) that is as close to your Oracle Management Cloud users as possible. Once the fields are filled press **Next**.
+   ![create-instance-details]
+   4. Confirm the instance details and click **Create**.
+   ![create-instance-conf]
+
+The Oracle Management Cloud instance creation process is initiated and the status of the instance creation process is displayed on the Oracle Management Cloud Service page. After the Oracle Management Cloud instance is created, a confirmation email is sent to the user whose email address was specified in the Notification Email field at the time of creating the instance.
+
+#### Add Users and Assign Roles
+As a Cloud Account Administrator, you can add users and assign Oracle Management Cloud roles.
+
+   1. Click the **Users** icon on the My Services toolbar.
+   2. Click **Add** on the User Management page.
+   3. Enter the user and work information on the User Details page of the Add User workflow and click **Next**. After the user account is created, the new user, whose email was entered in the Email field, receives a notification email.
+   4. Enter **Management Cloud** in the Filter by Service field and click Search icon. Management Cloud and its instances, if created, are displayed.
+   ![add-users]
+   5. Assign roles to the user.
+      * Click the **Service Entitlement** field to assign the `OMCEXTERNAL_ENTITLEMENT_ADMINISTRATOR` role. A user assigned this role can create Oracle Management Cloud instances, add users and assign the `OMCEXTERNAL_ENTITLEMENT_ADMINISTRATOR` role and Oracle Management Cloud instance roles.
+      * Click the **Service Instance** field to assign Oracle Management Cloud instance roles. Note that you can only assign Oracle Management Cloud instance roles after an instance is created.
+      * Oracle Management Cloud instance roles have the following privileges:
+        * **OMC Administrator**: A user assigned this role has full access to perform all Oracle Management Cloud configuration tasks, across all its offerings. The OMC Administrator can configure license editions, deploy agents, and so on.
+        * **OMC User**: A user assigned this role has limited access and can only perform tasks such as viewing and monitoring infrastructure or application performance.
+    6. Click **Finish** after you’ve assigned roles.
+   </details>
+
+
+
+
+
 
 ## 1. Prepare Your Environment
 
@@ -70,7 +126,9 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 
 1. On your Management Cloud tile, click the **Action Menu** ![hamburger] then click **Open Service Console**. You are now viewing the Oracle Management Cloud instances page.
 2. On the instance you want to access, click the **Manage this instance** menu and select **OMC URL**. The Oracle Management Cloud console home page is displayed.
-3. Navigate to **Administration** > **Agents** > **Download** and select the Gateway Agent agent type from drop-down list. Make a note of your `TENANT_NAME` and `OMC_URL` values for your environment.
+3. Navigate to **Administration** > **Agents**
+4. Press the ![hamburger] icon on the right and select the **Download Agents** from the drop-down list.
+5. In the **Agent Type** drop-down list select **Gateway**. Make a note of your `TENANT_NAME` and `OMC_URL` values for your environment found at the bottom of the page.
 
 ![agent-download]
 
@@ -124,11 +182,10 @@ Your Unix host must have HTTPS access to Oracle Management Cloud. To check this,
 
 Some of the files part of this set are:
 
-- PDF files with detailed instructions for uploading and evaluating sample data and your own data, as well as instructions for installing a Gateway agent
-- Alertlog.zip (Sample database alert logs)
-- Messages.zip (Sample Linux syslog files)
+- PDF files with detailed instructions for uploading and evaluating sample data
+- alertlog.zip (sample database alert logs)
+- messages.zip (sample Linux syslog files)
 - <span>uploadSample.sh</span> (a shell script for uploading the sample logs)
-- <span>uploadMyLog.sh</span> (a shell script for uploading your own logs)
 
 The next steps will guide you through these files.
 
@@ -198,7 +255,7 @@ Upload name: syslog.2018-01-07_19:43:32
 
 To verify the status of the uploads, follow these steps:
 
-1.  Log on to Oracle Management Cloud.
+1.  Log on to Oracle Management Cloud (if you have logged out).
 2.  Navigate to Log Analytics.
     1. From the Welcome to Oracle Management Cloud page, click the **navigation icon** ![alt text][hamburger] on the top-left corner to view the Management Cloud navigation pane if it is not already there. Select **Log Analytics**.
 3.  Navigate to the **Log Admin** page and view status of the uploads.
@@ -206,7 +263,7 @@ To verify the status of the uploads, follow these steps:
     2. Select **Uploads**.
  3. 
     4. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
-       1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will seen a green stick in the **Status** field.
+       1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will see a green bar in the **Status** field.
    
    ![uploads-1] ![uploads-2] ![uploads-3]
 </details>
@@ -271,481 +328,3 @@ Log Analytics allows you to quickly correlate logs from different sources (e.g. 
 
 You may have noticed that at 5:23:58PM, system logs (syslog) recorded that some I/O errors occurred on disk device sdd1 (see page 2), and database alert logs recorded that the database encountered I/O errors (see page 1); then at 5:24:00PM the database was terminated.
 </details>
-
-## 4. Upload Your Own Logs and Evaluate
-Now that you were able to upload some sample logs lets look at what your own logs look like inside OMC.
-
-<details>
-<summary><b>Deploying uploadMyLog</b></summary>
-
- To deploy the uploadMyLog file please follow the directions below.
-
-1. Download and install uploadMyLog.zip file found in the DBLogTrial.zip package. 
-   <pre>
-   $ <b> cd ~ </b>
-   $ <b> mkdir ./scratch </b>
-   $ <b> cd scratch </b>
-   $ <b> unzip uploadMyLog.zip </b> 
-   </pre>
-
-After extracting the Zip file as above, you will see a directory named DBLogTrial with a subdirectory named uploadMyLog. This document refers to the uploadMyLog directory as SCRIPT_HOME
-
-2. Now we need to make the executable script.
-   <pre>
-   $<b> cd ~/scratch/DBLogTrial </b>
-   $<b> cd uploadMyLog/ </b> 
-   $<b> chmod +x ./uploadMyLog.sh </b>
-   $<b> chmod +x ./uploadMyLogTraditional.sh </b>
-</pre>
-
-</details>
-<details>
-<summary><b>Using uploadMyLog</b></summary>
-
-This section provides the steps for using the uploadMyLog package to upload sample logs to explore Log Analytics features.
-
-1. Before uploading your logs, enter property values to be used in uploading the log in file `SCRIPT_HOME/DBLogTrial/uploadMyLog/config/upload.properties`.
-   - Go to the `SCRIPT_HOME/DBLogTrial/uploadMyLog/config` directory.
-   - Use an editor of your choice to edit file `upload.properties` to set appropriate values for the following properties:
-   - `UPLOAD_ROOT`: your `OMC_URL`
-   - `IDENTITY_DOMAIN`: your `TENANT_NAME`
-   - `USERNAME`: your OMC username
-   - (Optional) `HTTPS_PROXY`
-
-
-    **Mandatory Properties**
-    <pre>
-    # URL for uploading data to OMC
-    # Examples:
-    # UPLOAD_ROOT=https://inst1-acme.itom.management.us2.oraclecloud.com
-    # UPLOAD_ROOT=https://inst2-xyz.itom.management.europe.oraclecloud.com
-    # UPLOAD_ROOT=https://a123456.itom.management.us2.oraclecloud.com
-    # This is a required parameter. The "https://" part is optional.
-    UPLOAD_ROOT= <br/>
-    # Subscription Identity Domain
-    # EX:
-    # IDENTITY_DOMAIN=acme
-    # This is a required parameter
-    IDENTITY_DOMAIN= <br/>
-    # OMC user name
-    # EX:
-    # USERNAME=john.doe@xyz.com
-    # This is a required parameter
-    USERNAME=
-    </pre>
-
-    **Optional Property**
-    <pre>
-    # If you need to access OMC (Oracle Management Cloud) through a proxy server,
-    # set "HTTPS_PROXY=proxy_host:port
-    # E.g., HTTPS_PROXY=www-proxy.xyz.com:80
-    HTTPS_PROXY=
-    </pre>
-2. To upload your own Oracle Database alertlog, take the log and zip it into an alertlog.zip file. Move the alertlog.zip file into <SCRIPT_HOME>/logs. Please ensure you name the file exactly alertlog.zip, as the uploader will be looking for a file of that name.
-   <pre>
-   $ <b>zip alertlog.zip ./<your alertlog filename></b>
-   </pre> 
-3. To upload your own system logfile (typically the file /var/log/messages), take the log and zip it into a messages.zip file. Move messages.zip file into <SCRIPT_HOME>/logs. Please ensure you name the file exactly messages.zip, as the uploader will be looking for a file of that name.
-    <pre>
-   $ <b>zip messages.zip ./messages></b>
-   </pre> 
-4. Go to the SCRIPT_HOME directory, and run the uploadMyLog.sh script to upload the sample alert logs and syslog, respectively, as shown below. Enter your OMC password when prompted.
-   <pre>
-   $ <b>./uploadMyLog.sh alertlog </b>
-   $ <b>./uploadMyLog.sh syslog </b>
-   </pre> 
-
-   ##### Take note of the name of the upload at the bottom of each script output. An upload is identified by its name in Log Analytics UI.Examples of output lines containing upload names are:
-   <pre>
-    <b>Upload name: alertlog.2018-01-07_19:43:25</b>
-    <b>Upload name: syslog.2018-01-07_19:43:32</b>
-   </pre> 
-
-To verify the status of the uploads, follow these steps:
-
-1.  Log on to Oracle Management Cloud.
-2.  Navigate to Log Analytics.
-    1. From the Welcome to Oracle Management Cloud page, click the **navigation icon** ![alt text][hamburger] on the top-left corner to view the Management Cloud navigation pane if it is not already there. Select **Log Analytics**.
-3.  Navigate to the **Log Admin** page and view status of the uploads.
-    1. From the left navigation pane, select **Log Admin**.
-    2. Select **Uploads**.
-  
-    3. From the Uploads page, you should see the uploads that you performed earlier. If an upload shows 0 in Progress and 0 Failed, it has completed.
-       1. If necessary, click an upload name to see the Status of the upload. For example, click `alertlog_<timestamp>`. If the upload has completed successfully, you will seen a green stick in the **Status** field.
-   
-   ![uploads-1] ![uploads-2] ![uploads-3]
-</details>
-
-</details>
-<details>
-<summary><b>Viewing Uploaded Log Records</b></summary>
-
-To view the records from an upload, follow these steps.
-1. Navigate to the Uploads page. If necessary see, [Verifying the Status of the Uploads](#verifying-the-status-of-the-uploads)
-2. From the Uploads page, click the **navigation icon** ![alt text][hamburger], and click **View in Log Explorer** to view the records from that upload. Let's perform the steps to view the alert log records in log explorer. 
-3. From the Log Explorer page, you can view the alert log records from the upload that you selected.
-
-![][log-alerts]
-   
-Some of the information shown on the page includes
-
--  The period of the uploaded alert log entries.
--  The log entries came from the upload whose name is in the Query bar.
--  The histogram shows the daily volumes of log records. This helps identify any abnormality in record volumes at a glance. You can drill down by clicking a bar on the chart.
--  The first 25 of the records that came with the upload. The records are in date order from newest to oldest. You can reverse the order by clicking the arrowhead in the Time (<time zone>) field. You can browse the rest of log records by using the pagination at the bottom of the page.
-
-<p align="center">
-    <img src="./Tutorial_Images/general/page_view.png" />
-</p>
-
-##### Note - the log entries you see will vary depending on the record in the alertlog and messages logs that you upload. 
-
-</details>
-
-## 5. Install a Gateway Agent
-
-<details>
-<summary><b>Deploy Oracle Management Cloud Gateway</b></summary>
-
-### Before You Begin:
-
-### Background
-
-Oracle Management Cloud (OMC) Gateway (highlighted in red in the diagram below) is an optional yet vital component of an Oracle Management Cloud deployment. It serves as a channel between Oracle Management Cloud agents and Oracle Management Cloud.
-
-While it is possible for the OMC agent that resides on each host to communicate directly with OMC’s backend, for security reasons, an organization may want to limit the number of hosts that can connect to the Internet directly. In this case, it is best to set up a small number of OMC Gateway hosts, and enable Internet access only for those hosts.
-For a trial, since the number of hosts may be small, it is possible to do a trial without the gateway. However, if there is a desire to limit security exposure even in a trial environment, then it is a good idea to set up the OMC Gateway.
-
-<p align="center">
-    <img src="./Tutorial_Images/general/Github_Gateway _Chart.png" />
-</p>
-
-There are 5 steps for deploying OMC Gateway.
-
-1. Download the Oracle Management Cloud Gateway Software
-   
-2. Create Registration Key
-   
-3. Edit the Response File
-   
-4. Install the Gateway
-   
-5. Verify Gateway Installation
-
-What Do You Need?
-
-* A valid Oracle Cloud account, an Oracle Management Cloud instance and "OMC Administrator" role credentials. See [Access Oracle Management Cloud](https://docs.oracle.com/en/cloud/paas/management-cloud/omcgs/access-oracle-management-cloud.html#GUID-838A6676-0224-4CF1-8BC8-8327887D24B7) in *Getting Started with Oracle Management Cloud*. You may already have these if you followed sections 1-4 or followed another prior tutorial.
-
-* A host: the OMC Gateway needs to be installed on a host where it will run. For production deployment, one or more dedicated physical or VM hosts is recommended. For trial, it is possible to use a host where the entities you want to monitor are installed. Linux, Windows, Solaris SPARC and AIX based hosts are supported. See the “Supported Operating Systems” section in [Common Prerequisites](https://docs.oracle.com/en/cloud/paas/management-cloud/emaig/generic-prerequisites-deploying-oracle-management-cloud-agents.html).
-  
-* A staging location: an empty directory on your host where you download or copy the agent files.
-  
-* An installation directory: an empty directory on your host where the agent will be installed. Ensure the directory is created with the required permissions. See the "Permissions Required on the Agent Base Directory" section in [Common Prerequisites](https://docs.oracle.com/en/cloud/paas/management-cloud/emaig/generic-prerequisites-deploying-oracle-management-cloud-agents.html).
-
-### 1. Download the Oracle Management Cloud Gateway Software
-
-The Oracle Management Cloud gateway software, including a gateway installation script and an editable response file, is provided in a zip file that you can download from your Oracle Management Cloud console.
-
-#### Registering For a Cloud Account
-
-If you don't have an Oracle Cloud Account, sign up for one using this Registering For a Cloud Account section. If you already have a cloud account, then skip the Registering For a Cloud Account section.
-
-1.	Go to the Oracle Cloud Infrastructure Page: https://cloud.oracle.com/home
-
-2.	At the top of the page click the try for free button. 
-
-3.	Here is where you will put in the information for your trial account.
-
-4.	Fill out the information for the Account Details section.
-
-	* Account Type
-  
-	* Cloud Account Name
-  
-	* Default Data Region
-  
-	* Email Address
-  
-	* First Name
-  
-	* Last Name
-  
-	* Country/Territory
-  
-	* Address
-  
-	* City
-  
-	* State
-  
-	* Zip/Postal Code
-  
-<p align="center">
-    <img src="./Tutorial_Images/general/OCI_Section_1.png" />
-</p>
-
-5.	For the Verification Code Section, fill out the information for this as well.
-
-	* Country/Region Calling Code
-  
-	* Mobile
-  
-<p align="center">
-    <img src="./Tutorial_Images/general/OCI_Section_2.png" />
-</p>
-
-6.	Click on the Request Code button to receive the verification code via a text message to the mobile number that you provided when you filled out the Mobile Number Field.
-
-7.	Once you receive the code, type that code into the Verification Code Field and click the verify button. It may take a minute or so for the verification button to work.
-
-8.	In the Credit Card Details Section click on the Add Payment Button and provide information from a credit card. Debit cards can be used as well. You will be asked to verify your address and provide the card information in separate windows.
-
-9.	In the Terms & Conditions section, check the complete box and click the Complete button.
-
-10.	Following this completion your cloud account will start to be provisioned and will take a few minutes to be completed.
-
-**Note:** *Oracle will not charge you during the free trial and you will not be charged after the free trial without your approval.*
-
-#### Access the Oracle Management Cloud Console
-
-Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle Management Cloud instance tile should be displayed on the My Services dashboard.
-
-1. Go to cloud.oracle.com and click Sign In. Home Page: https://cloud.oracle.com/home
-
-2. Your Sign In procedure varies depending on the type of account that your tenant is configured.
-
-    In most cases, if your tenant is on “Cloud Account with Identity Cloud Service”, select “Cloud Account with Identity Cloud Service” as your account type, enter the name of your account, and click My Services or Next.
-
-    <p align="center">
-    <img src="./Tutorial_Images/general/Github_SignIn.png" />
-    </p>
-
-    Enter your user ID and password.
-
-    On the other hand, if you have a Traditional Cloud Account (most likely because it was provisioned prior to April 2018), select “Traditional Cloud Account” as account type. Select “US Commercial 2 (us2)” for data center if your account was provisioned in the United States.
-  
-    * Supply the name of your identity domain.
-  
-    * Enter your user ID and password.
-
-3. On the Oracle Cloud Dashboard, click the menu link next to the Oracle logo toward the top of the page to open up the navigation menu to the left.
-
-4. On the navigation menu, click on Services to expand the list of services, and click Management Cloud.
-
-  
-5. This gives you a link that takes you to the Oracle Management Cloud home page, which looks like the following. You will be using the **Global Navigation Menu** to the left to carry out the remaining setup. If the menu is hidden, click the link next to Oracle logo (highlighted in red) to bring up the menu.
-
-<p align="center">
-    <img src="./Tutorial_Images/general/OMC_Home_Screen.png" />
-</p>
-
-#### Save and Extract the Gateway Files
-
-1. On the Oracle Management Cloud home page, click the **Global Navigation Menu** on the top-left corner and navigate to **Administration > Agents.**
-   
-2. On the **Agents – Oracle Management Cloud** page, click the hamburger menu button on the top right and then click the **Download Agents** tab. The Agent Software Download page is displayed.
-   
-3. Select Gateway from the **Agent Type** drop-down list, and select one of the choices (such as Linux (64-bit)) that matches the type of O/S on the host where you will be installing the gateway from the **Operating System** drop-down list. The gateway software link for the gateway you’ve selected is displayed.
-
-<p align="center">
-    <img src="./Tutorial_Images/general/replacementPicAgents.png" />
-</p>
-   
-4. A list of links would show up under Download. Click the link on the gateway file that you wish to download.
-
-    **Note:** *Please also make a note of the values of TENANT_NAME and OMC_URL, which are shown at the bottom of the page. You will need this information for a later step when you set up the gateway.rsp file.*
-   
-5. If you download the Gateway file to your computer instead of the host that you plan to run the Gateway, move the downloaded file to your Gateway host and unzip the file into a staging directory of your choice. To do this for Linux / Unix, use the following steps:
-	
-	*	From Local Machine Terminal Session - SSH into your OCI Instance by running the below command (You will use your OCI Public IP Address instead of 129.***.***.**):
-		
-        **`ssh opc@129.***.***.**`**
-
-	*	From OPC Terminal Session - Type pwd to see where you are currently at in your       directory. You should see the following:
-
-         **`/home/opc`**
-
-	*	From OPC Terminal Session - Make a directory called agent. Run the following command in your terminal:
-		
-        **`mkdir agent`**
-
-	*	From OPC Terminal Session - Make a directory called omc.  Run the following command in your terminal:
-		
-        **`mkdir omc`**
-
-	*	From OPC Terminal Session - Type the following command:
-		
-        **`exit`**
-
-	*	From Local Machine Session - We will now copy our gateway agent file over to our opc session:
-  
-		a.	Locate the file path of the 'gateway_linux.x64_1.32.0.zip
-        
-
-		b.	Run the following command (File path will depend on where you saved the agent and IP address will be different. File name may be slightly different as well.):
-
-        **`scp Downloads/gateway_linux.x64_1.32.0.zip opc@129.***.***.**:/home/opc/omc`**
-
-	*	From Local Machine Session - SSH back into your OCI account (Your IP Address will be different than shown below):
-
-        **`ssh opc@129.***.***.**`**
-         
-
-	*	From OPC Terminal Inside The OMC Directory Session - Type the following command to see the contents of your directory.  You should now see a .zip called gateway_linux.x64_1.32.0.zip:
-		
-         **`ls`**
-
-	*	From OPC Terminal Inside The OMC Directory Session - Unzip the gateway agent file by running the below command:
-		
-         **`unzip gateway_linux.x64_1.32.0.zip`**
-   
-### 2. Create a Registration Key
-
-A registration key is issued for your identity domain, and it’s used when you deploy gateways and other agents.
-
-1. On the Oracle Management Cloud home page, click the **Global Navigation Menu** on the top-left
-corner and navigate to **Administration > Agents.**
-
-2. On the **Agents – Oracle Management Cloud** page, click the hamburger menu button on the top right and then click the **Manage Registration Keys** tab. The Registration Keys page opens.
-   
-3. Enter the required details to create a new registration key:
-   
-	* In the **Name** field, specify a name to identify the registration key.
- 
-	* In the **Registration Limit** field, enter a number that indicates the maximum number of gateways, data collectors, and agents that can be associated with the registration key. If you are not sure, just put 10,000, which should be enough for a trial.
-  
-	* Click **Create New Key.** A new registration key will then be created. Make a note of this registration “Key Value”, it will be used by the AgentInstall.sh script at the time of installation.
-
-### 3. Edit the Response File
-
-The *AgentInstall.sh* script is used to carry out the actual install of the OMC Gateway. The script requires a set of parameters that are specific to your environment. These parameters are specified in the response file *gateway.rsp.*
-
-1. On your Linux / UNIX or Microsoft Windows host, logged in as the owner of the Oracle software navigate to your staging directory. Edit the *gateway.rsp* file using any standard text editor. Add your values for the **mandatory parameters** in the *gateway.rsp* file. Here are example values (make sure to replace the examples with the correct values for your environment):
-   
-	* *TENANT_NAME=example-tenant*
-  
-	**Note:** this value must be exactly as shown in the UI, the format is instance name-domain name.
-
-	* *AGENT_REGISTRATION_KEY=xxxxxxx-yyyyyyyyyyyyyyyyy*
-  
-	* *AGENT_BASE_DIRECTORY=/home/opc/agent* - You can use this exact example since you created an agent directory in the earlier steps.
-
-    * *OMC_URL=https://example-tenant.management.us2.oraclecloud.com/*  
-  
-	(or for example when installing on Microsoft Windows)
-
-	*AGENT_BASE_DIRECTORY=C:\Oracle\GatewayAgent*
-
-	The AGENT_BASE_DIRECTORY is where your agent executables and other run-time files will reside.  It is best to have a standard location that is common across all your hosts, so that the gateway.rsp file is standardized and you just need to set up the file once. This is why you created the agent directory in the earlier steps.
-
-    <p align="center">
-    <img src="./Tutorial_Images/general/ezgif.com-crop.gif" />
-  </p>
-
-2. For security reasons, if you are using a **proxy server** (a dedicated host or system that acts as an intermediary between your host and Oracle Management Cloud) you must define its parameters next. In this case, the proxy server was configured to use authentication, so it requires a user name and password. Edit the following parameters in the *gateway.rsp* file. (Be sure to replace the examples with the proper credentials):
-   
-	* *OMC_PROXYHOST=www-proxy.example.com* 
-  
-	* *OMC_PROXYPORT=80*
-  
-	* *OMC_PROXYUSER=oracle*
-  
-Save and close the response file.
-
-### 4a. Install the Gateway on Linux / UNIX
-You install a gateway by running the AgentInstall.sh script from the command line. By default, the gateway install script picks up all its required parameters from the response file you just edited in the same directory.
-
-1. On your Linux / UNIX host, logged in as the owner of the Oracle software navigate to your staging directory. Run the installer script using this command:
-   
-    **`./AgentInstall.sh`** 
- 
-2. To enable the gateway to start automatically when the host is booted up, add a startup script. Switch to the root user.
-
-    **`$ su - root`**
-    **`password`**
-    **`#`**
-   
-3. Create a shell script named startomcagent.sh under the /etc/init.d directory using any standard text editor with the following:
-
-
-    **`#!/bin/sh`**
-    **`su - <Agent_Install_User> -c`**
-    **`<Agent_Base_Directory>/agent_inst/bin/omcli start agent`**
- 
-    For example, if the gateway is installed under the /oracle/omc directory and gateway installation owner is oracle, then the content of the shell script should be as follows:
- 
-    *#!/bin/sh*
-    *su - “oracle” -c “/oracle/omc/agent_inst/bin/omcli start agent”*
-
-4. Save the script file as startomcagent.sh.
-   
-5. Change the permission of the file to 755. Ensure that the owner of the script file and all the other files in the */etc/init.d* directory is *root.*
-   
-6. For Linux, create symbolic links under 
-    */etc/rc.d/rc2.d, /etc/rc.d/rc3.d, /etc/rc.d/rc5.d,*
-    and */etc/rc.d/rc6.d*
-   directories to make the newly created shell script file accessible in the host startup process. Prefix the symbolic link with S and the priority level. For example, to create the symbolic links with priority level 81, run the following commands:
-
-   **`ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh`**
-
-   **`ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh`**
-
-   **`ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh`**
-
-   **`ln -s /etc/init.d/startomcagent.sh /etc/rc6.d/S81startomcagent.sh`**
-
-   
-7. For Solaris, create symbolic links under /etc/rc.d/rc2.d, /etc/rc.d/rc3.d directories c. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
-
-    **`ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh`**
-
-    **`ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh`**
-   
-8.  For AIX, create symbolic links under
-*/etc/rc.d/rc2.d, /etc/rc.d/rc3.d,* and */etc/rc.d/rc5.d*
-directories with priority level 81. Prefix the symbolic link with S and the priority level. To create the symbolic links with priority level 81, run the following commands:
-
-    **`ln -s /etc/init.d/startomcagent.sh /etc/rc2.d/S81startomcagent.sh`**
-
-    **`ln -s /etc/init.d/startomcagent.sh /etc/rc3.d/S81startomcagent.sh`**
-
-    **`ln -s /etc/init.d/startomcagent.sh /etc/rc5.d/S81startomcagent.sh`**
-
-### 4b. Install the Gateway on Windows
-
-You install a gateway by running the AgentInstall.bat script from the command line. By default, the gateway install script picks up all its required parameters from the response file you just edited in the same directory.
-
-1. On Windows hosts, launch the command line interface as administrator.
-   
-2. Go to the directory where you unzip the package for gateway software, and run AgentInstall.bat. Make sure you run it in a command line window as administrator. The script will install Gateway
-software and set it to start automatically as a Windows service.
-
-### 5. Verify the Gateway Installation
-After installing the gateway, you must verify the installation.
-
-1. From the Oracle Management Cloud home page, click the **Global Navigation Menu** on the top-left corner and navigate to **Administration > Agents.**
-
-2. Click the **Gateways** tab.
-   
-3. Check if the host name of your deployed gateway exists in the list of available gateways. You can click the gateway entry to view details and match the specified registration key value with the registration key that you had used when deploying the gateway.
-
-<p align="center">
-    <img src="./Tutorial_Images/general/replacementPicDetails2.png" />
-</p>
-   
-4. On your Linux / UNIX host, run the following *omcli* commands to verify that the gateway was successfully deployed:
-
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same. If you're inside the bin directory, be sure to put ./ in front of omcli in order for the command to run correctly.
-
-    *<AGENT_BASE_DIRECTORY>/agent_inst/bin/omcli status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud. If you're inside the bin directory, be sure to put ./ in front of omcli in order for the command to run correctly.
-
-5. If installing on a Microsoft Windows host, run the following *omcli* commands to verify that the gateway was successfully deployed:
-   
-    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent* - Run this command to display a list of properties for the newly installed gateway. Check if the last successful upload and last attempted upload values (date and time) are the same.
-  
-    *<AGENT_BASE_DIRECTORY>\agent_inst\bin\omcli.bat status agent connectivity* - Run this command to verify that there are no significant connectivity issues with connections associated with the gateway and Oracle Management Cloud.
-
-You are now ready to perform additional installation of agents and the optional Enterprise Manager Data Collector for Oracle Management Cloud.
-
-</details>
-
