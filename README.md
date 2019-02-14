@@ -25,7 +25,7 @@
 
 
 
-<h1> Analyzing Logs Using Oracle Log Analytics Cloud Service, A Service In The Oracle Management Cloud Suite </h1>
+<h1> Analyzing Logs in Oracle Management Cloud </h1>
 
 **Oracle Management Cloud – Log Analytics**
 
@@ -57,9 +57,12 @@ Using the provided sample log data, you will be able to quickly explore the basi
 
 #### What Do You Need?
 
-- An Oracle Cloud account: if you do not already have one, sign up for a free trial  and see **Creating an Oracle Cloud Trial**.
+- An Oracle Cloud account: if you do not already have one, sign up for a free trial  and see **Creating an Oracle Cloud Trial** below.
+- An Oracle Management Cloud instance: If you don't already have an Oracle Management Cloud instance, create one. For more information, see **Creating an Oracle Management Cloud Instance** below.
 
-Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. When you sign up for the Oracle Cloud trial, your account is created soon after you sign up and you will receive a welcome email.
+<details><summary><b>Creating an Oracle Cloud Trial</b></summary>
+
+Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. When you sign up for Oracle Cloud, your account is created soon after you sign up and you receive a welcome email.
 
 The welcome email has the following information:
 
@@ -69,7 +72,7 @@ The welcome email has the following information:
 
 Using the information in the welcome email you can access My Services and explore the Guided Journey, while your services are being provisioned.
 
-After Oracle Cloud is provisioned, you’ll receive a notification on the My Services dashboard. Please allow up to 5 hours after receiving the email for your entire cloud environment to be provisioned.
+After Oracle Management Cloud is provisioned, you’ll receive a notification on the My Services dashboard. Please allow roughly 5 hours after receiving the email for your entire cloud environment to be provisioned.
 </details>
 
 <details><summary><b>Creating an Oracle Management Cloud Instance</b></summary>
