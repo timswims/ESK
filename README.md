@@ -54,6 +54,7 @@ Using the provided sample log data, you will be able to quickly explore the basi
 #### What Do You Need?
 
 - An Oracle Cloud account: if you do not already have one, sign up for a free trial  and see **Creating an Oracle Cloud Trial** below.
+- A UNIX client with TLS 1.2 support.
 
 <details><summary><b>Creating an Oracle Cloud Trial</b></summary>
 
