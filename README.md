@@ -121,7 +121,7 @@ Sign in to Oracle Cloud as a user with the OMC Administrator role. Your Oracle M
 2. On the instance you want to access, click the **Manage this instance** menu and select **OMC URL**. The Oracle Management Cloud console home page is displayed.
 3. Navigate to **Administration** > **Agents**
 4. Press the ![hamburger] icon on the right and select the **Download Agents** from the drop-down list.
-5. In the **Agent Type** drop-down list select **Gateway**. Make a note of your `TENANT_NAME` and `OMC_URL` values for your environment found at the bottom of the page.
+5. In the **Agent Type** drop-down list select **Gateway**. Make a note of your `TENANT_NAME` and `OMC_URL` values for your environment found at the bottom of the page. (No agent download necessary.)
 
 ![agent-download]
 
