@@ -60,7 +60,7 @@ NOTE: If you would like to see the documentation for installation and configurat
 
 <details><summary><b>Creating an Oracle Cloud Trial Account</b></summary>
 
-Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. You will receive a welcome email soon after your account is created with the following information:
+Navigate [**here**](https://cloud.oracle.com/tryit) and sign up for an Oracle Cloud trial. You will receive a welcome email soon after your account is created with the following information:
 
 * Your user name and temporary password
 
@@ -105,7 +105,7 @@ Tags: NA
 The Oracle Management Cloud instance creation process is initiated and the status of the instance creation is displayed on the Oracle Management Cloud Service page. After the Oracle Management Cloud instance is created, a confirmation email is sent to the user whose email address was specified in the Notification Email field at the time of creating the instance.
 
 #### Optional: Add Users and Assign Roles
-As a Cloud Account Administrator, you can add users and assign Oracle Management Cloud roles.
+For the demonstration, adding users and assigning roles is not necessary.  That said, as a Cloud Account Administrator, you can add users and assign Oracle Management Cloud roles.
 
    1. Click the **Users** icon on the My Services toolbar.
    2. Click **Add** on the User Management page.
