@@ -37,7 +37,7 @@ Oracle Management Cloud is a suite of next-generation integrated monitoring, man
       - [Background](#background)
       - [What Do You Need?](#what-do-you-need)
   - [1. Prepare Your Environment](#1-prepare-your-environment)
-      - [Identify Your Oracle Management Cloud Instance](#identify-your-oracle-management-cloud-instance)
+      - [Set Up Your Oracle Management Cloud Instance](#set-up-your-oracle-management-cloud-instance)
       - [Check for TLS 1.2 Support](#check-for-tls-12-support)
       - [Verify your host connectivity to Oracle Management Cloud](#verify-your-host-connectivity-to-oracle-management-cloud)
   - [2. Prepare to Upload Log Data](#2-prepare-to-upload-log-data)
@@ -47,13 +47,14 @@ Oracle Management Cloud is a suite of next-generation integrated monitoring, man
 
 #### Background
 
-This tutorial kit is designed to give you a first-hand glimpse of what Oracle Log Analytics can do. You will see how to quickly identify issues and find anomalies within your IT environment using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use sample logs so you can quickly see how Log Analytics works without the extra steps of installing agents and a gateway. For realtime metric and log collection, agents are installed for data collection. This is covered in the documentation found here https://docs.oracle.com/en/cloud/paas/management-cloud/index.html
-Using the provided sample log data, you will be able to quickly explore the basic functionalities of OMC Log Analytics.
+This tutorial kit is designed to give you a first-hand glimpse of what Oracle Log Analytics can do. You will see how to quickly identify issues and find anomalies within your IT environment using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use sample logs so you can quickly see how Log Analytics works without the extra steps of installing agents and a gateway in your environment. Using the provided sample log data, you will be able to quickly explore the basic functionalities of OMC Log Analytics.
+
+NOTE: If you would like to see the process for installation and configuration of agents to monitor your own environment, see the documentation found here https://docs.oracle.com/en/cloud/paas/management-cloud/index.html
 
 
 #### What Do You Need?
 
-- The name of your Oracle Cloud account, user name and password: if you do not already have one, sign up for a free trial.  See **Creating an Oracle Cloud Account With Free Credits Trial ** below.
+- The name of your Oracle Cloud account, user name, and password: if you do not already have one, sign up for a free trial.  See **Creating an Oracle Cloud Account With Free Credits Trial ** below.
 - A UNIX client with TLS 1.2 support.
 - An Internet connection to Oracle Mananagement Cloud
 
@@ -94,7 +95,7 @@ Once you have your Oracle Cloud account provisioned, you can create an Oracle Ma
    4. Confirm the instance details and click **Create**.
    ![create-instance-conf]
 
-The Oracle Management Cloud instance creation process is initiated and the status of the instance creation process is displayed on the Oracle Management Cloud Service page. After the Oracle Management Cloud instance is created, a confirmation email is sent to the user whose email address was specified in the Notification Email field at the time of creating the instance.
+The Oracle Management Cloud instance creation process is initiated and the status of the instance creation is displayed on the Oracle Management Cloud Service page. After the Oracle Management Cloud instance is created, a confirmation email is sent to the user whose email address was specified in the Notification Email field at the time of creating the instance.
 
 #### Add Users and Assign Roles
 As a Cloud Account Administrator, you can add users and assign Oracle Management Cloud roles.
