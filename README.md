@@ -27,9 +27,9 @@
 
 <h1> Analyzing Logs in Oracle Management Cloud </h1>
 
-**Oracle Management Cloud (OMC) – Log Analytics**
+**Oracle Management Cloud (OMC) – Oracle Log Analytics**
 
-Oracle Management Cloud is a suite of next-generation integrated monitoring, management, and analytics cloud services that leverage machine learning and big data techniques against the full breadth of the operational data set. Oracle Log Analytics Cloud Service is one of those services in the suite. It monitors, aggregates, indexes, and analyzes all log data from your applications and infrastructure – enabling users to search, explore, and correlate this data to troubleshoot problems faster, derive operational insight, and make better decisions. 
+Oracle Management Cloud is a suite of next-generation integrated monitoring, management, and analytics cloud services that leverage machine learning and big data techniques against the full breadth of the operational data set. Oracle Log Analytics Cloud Service is one service in the suite. Oracle Log Analytics monitors, aggregates, indexes, and analyzes all log data from your applications and infrastructure – enabling users to search, explore, and correlate this data to troubleshoot problems faster, derive operational insight, and make better decisions. 
 
 ## Table of Contents
 
@@ -47,35 +47,34 @@ Oracle Management Cloud is a suite of next-generation integrated monitoring, man
 
 #### Background
 
-This tutorial is designed to give you a first-hand view of what Oracle Log Analytics can do. You will see how to quickly identify issues and find anomalies within your IT environment.  This is done using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use sample logs so you can quickly see how Log Analytics works without the extra steps of installing agents and a gateway for realtime metric and log collection normally carried out for production use.  
+This tutorial kit is designed to give you a first-hand glimpse of what Oracle Log Analytics can do. You will see how to quickly identify issues and find anomalies within your IT environment using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use sample logs so you can quickly see how Log Analytics works without the extra steps of installing agents and a gateway. For realtime metric and log collection, agents are installed for data collection. This is covered in the documentation found here https://docs.oracle.com/en/cloud/paas/management-cloud/index.html
 Using the provided sample log data, you will be able to quickly explore the basic functionalities of OMC Log Analytics.
 
 
 #### What Do You Need?
 
-- An Oracle Cloud account: if you do not already have one, sign up for a free trial  and see **Creating an Oracle Cloud Trial** below.
+- The name of your Oracle Cloud account, user name and password: if you do not already have one, sign up for a free trial.  See **Creating an Oracle Cloud Account With Free Credits Trial ** below.
 - A UNIX client with TLS 1.2 support.
+- An Internet connection to Oracle Mananagement Cloud
 
-<details><summary><b>Creating an Oracle Cloud Trial</b></summary>
+<details><summary><b>Creating an Oracle Cloud Trial Account</b></summary>
 
-Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. When you sign up for Oracle Cloud, your account is created soon after you sign up and you receive a welcome email.
-
-The welcome email has the following information:
+Navigate [**here**](https://cloud.oracle.com/home) and sign up for an Oracle Cloud trial. You will receive a welcome email soon after your account is created with the following information:
 
 * Your user name and temporary password
 
 * The name of your Cloud Account
 
-Using the information in the welcome email you can access My Services and explore the Guided Journey, while your services are being provisioned.
+Using the information in the welcome email you can access My Services and explore the Guided Journey, while your services are being provisioned, which can take up to 5 hours.
 
-After Oracle Management Cloud is provisioned, you’ll receive a notification on the My Services dashboard. Please allow roughly 5 hours after receiving the email for your entire cloud environment to be provisioned.
+After your account is provisioned, you’ll receive a notification on the My Services dashboard. NOTE: Please allow up to 5 hours after receiving the welcome email for your entire cloud environment to be provisioned.
 </details>
 
 ## 1. Prepare Your Environment
 
-#### Identify Your Oracle Management Cloud Instance
+#### Set Up Your Oracle Management Cloud Instance
 
-To meet the pre-requisites, you must have signed up for an Oracle Cloud account and created an Oracle Management Cloud instance. If you don't already have an Oracle Management Cloud instance, create one. For more information, see **Creating an Oracle Management Cloud Instance** below.
+Once you have your Oracle Cloud account provisioned, you can create an Oracle Management Cloud instance. If you already have one, skip this step. See **Creating an Oracle Management Cloud Instance** below.
 
 <details><summary><b>Creating an Oracle Management Cloud Instance</b></summary>
 
@@ -90,7 +89,7 @@ To meet the pre-requisites, you must have signed up for an Oracle Cloud account 
    1. On the **My Services** dashboard, open the menu in the upper left corner. Scroll down to find **Management Cloud** and click the link to go into the Oracle Management Cloud services console.
    2. Click the **Create Instance** button.
    ![create-instance]
-   3. Provide basic service instance information on the Create New Instance page. In the Region field, select the Data Region (a geographical region) that is as close to your Oracle Management Cloud users as possible. Once the fields are filled press **Next**.
+   3. Provide basic service instance information on the Create New Instance page. In the Region field, select the Data Region (a geographical region) that is as close to your Oracle Management Cloud users as possible. Once the fields are filled out, press **Next**.
    ![create-instance-details]
    4. Confirm the instance details and click **Create**.
    ![create-instance-conf]
