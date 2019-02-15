@@ -49,14 +49,14 @@ Oracle Management Cloud is a suite of next-generation integrated monitoring, man
 
 This tutorial kit is designed to give you a first-hand glimpse of what Oracle Log Analytics can do. You will see how to quickly identify issues and find anomalies within your IT environment using IT metrics and logs collected by Oracle Log Analytics.  For this exercise we will use sample logs so you can quickly see how Log Analytics works without the extra steps of installing agents and a gateway in your environment. Using the provided sample log data, you will be able to quickly explore the basic functionalities of OMC Log Analytics.
 
-NOTE: If you would like to see the process for installation and configuration of agents to monitor your own environment, see the documentation found here https://docs.oracle.com/en/cloud/paas/management-cloud/index.html
+NOTE: If you would like to see the documentation for installation and configuration to monitor your own environment, see the documentation found here https://docs.oracle.com/en/cloud/paas/management-cloud/index.html
 
 
 #### What Do You Need?
 
 - The name of your Oracle Cloud account, user name, and password: if you do not already have one, sign up for a free trial.  See **Creating an Oracle Cloud Account With Free Credits Trial ** below.
 - A UNIX client with TLS 1.2 support.
-- An Internet connection to Oracle Mananagement Cloud
+- An Internet connection from UNIX client to Oracle Mananagement Cloud
 
 <details><summary><b>Creating an Oracle Cloud Trial Account</b></summary>
 
@@ -90,14 +90,21 @@ Once you have your Oracle Cloud account provisioned, you can create an Oracle Ma
    1. On the **My Services** dashboard, open the menu in the upper left corner. Scroll down to find **Management Cloud** and click the link to go into the Oracle Management Cloud services console.
    2. Click the **Create Instance** button.
    ![create-instance]
-   3. Provide basic service instance information on the Create New Instance page. In the Region field, select the Data Region (a geographical region) that is as close to your Oracle Management Cloud users as possible. Once the fields are filled out, press **Next**.
+   3. Provide basic service instance information on the Create New Instance page;
+Instance Name: Easystart 
+Description: Easystart quick demonstration
+Notification Email: your.name@company.com
+Region: closest region
+Tags: NA
+
+. In the Region field, select the Data Region (a geographical region) that is as close to your Oracle Management Cloud users as possible. Once the fields are filled out, press **Next**.
    ![create-instance-details]
    4. Confirm the instance details and click **Create**.
    ![create-instance-conf]
 
 The Oracle Management Cloud instance creation process is initiated and the status of the instance creation is displayed on the Oracle Management Cloud Service page. After the Oracle Management Cloud instance is created, a confirmation email is sent to the user whose email address was specified in the Notification Email field at the time of creating the instance.
 
-#### Add Users and Assign Roles
+#### Optional: Add Users and Assign Roles
 As a Cloud Account Administrator, you can add users and assign Oracle Management Cloud roles.
 
    1. Click the **Users** icon on the My Services toolbar.
